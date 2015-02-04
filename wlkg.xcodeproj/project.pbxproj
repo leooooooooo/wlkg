@@ -1,0 +1,542 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1843A19D1A81C01D00A0C5A4 /* baobiaoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1843A1961A81C01D00A0C5A4 /* baobiaoViewController.m */; };
+		1843A19E1A81C01D00A0C5A4 /* baoguanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1843A1981A81C01D00A0C5A4 /* baoguanViewController.m */; };
+		1843A19F1A81C01D00A0C5A4 /* baojianViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1843A19A1A81C01D00A0C5A4 /* baojianViewController.m */; };
+		1843A1A01A81C01D00A0C5A4 /* baoshuiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1843A19C1A81C01D00A0C5A4 /* baoshuiViewController.m */; };
+		1843A1A61A81C04D00A0C5A4 /* exiticon.png in Resources */ = {isa = PBXBuildFile; fileRef = 1843A1A11A81C04D00A0C5A4 /* exiticon.png */; };
+		1843A1A71A81C04D00A0C5A4 /* head_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 1843A1A21A81C04D00A0C5A4 /* head_icon.png */; };
+		1843A1A81A81C04D00A0C5A4 /* iconbg.png in Resources */ = {isa = PBXBuildFile; fileRef = 1843A1A31A81C04D00A0C5A4 /* iconbg.png */; };
+		1843A1A91A81C04D00A0C5A4 /* l_n_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 1843A1A41A81C04D00A0C5A4 /* l_n_bg.png */; };
+		1843A1AA1A81C04D00A0C5A4 /* wuliu.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1843A1A51A81C04D00A0C5A4 /* wuliu.jpg */; };
+		1843A1AF1A81C06700A0C5A4 /* parser.m in Sources */ = {isa = PBXBuildFile; fileRef = 1843A1AC1A81C06700A0C5A4 /* parser.m */; };
+		1843A1B01A81C06700A0C5A4 /* soap.m in Sources */ = {isa = PBXBuildFile; fileRef = 1843A1AE1A81C06700A0C5A4 /* soap.m */; };
+		1843A1B41A81C08300A0C5A4 /* KeychainItemWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 1843A1B31A81C08300A0C5A4 /* KeychainItemWrapper.m */; };
+		18847BB81A81BF540051BE0E /* 48.png in Resources */ = {isa = PBXBuildFile; fileRef = 18847BA21A81BF540051BE0E /* 48.png */; };
+		18847BB91A81BF540051BE0E /* 58.png in Resources */ = {isa = PBXBuildFile; fileRef = 18847BA31A81BF540051BE0E /* 58.png */; };
+		18847BBA1A81BF540051BE0E /* 72.png in Resources */ = {isa = PBXBuildFile; fileRef = 18847BA41A81BF540051BE0E /* 72.png */; };
+		18847BBB1A81BF540051BE0E /* 80.png in Resources */ = {isa = PBXBuildFile; fileRef = 18847BA51A81BF540051BE0E /* 80.png */; };
+		18847BBC1A81BF540051BE0E /* 87.png in Resources */ = {isa = PBXBuildFile; fileRef = 18847BA61A81BF540051BE0E /* 87.png */; };
+		18847BBD1A81BF540051BE0E /* 96.png in Resources */ = {isa = PBXBuildFile; fileRef = 18847BA71A81BF540051BE0E /* 96.png */; };
+		18847BBE1A81BF540051BE0E /* 120.png in Resources */ = {isa = PBXBuildFile; fileRef = 18847BA81A81BF540051BE0E /* 120.png */; };
+		18847BBF1A81BF540051BE0E /* 144.png in Resources */ = {isa = PBXBuildFile; fileRef = 18847BA91A81BF540051BE0E /* 144.png */; };
+		18847BC01A81BF540051BE0E /* 180.png in Resources */ = {isa = PBXBuildFile; fileRef = 18847BAA1A81BF540051BE0E /* 180.png */; };
+		18847BC11A81BF540051BE0E /* 航贸网登录.png in Resources */ = {isa = PBXBuildFile; fileRef = 18847BAB1A81BF540051BE0E /* 航贸网登录.png */; };
+		18847BC21A81BF540051BE0E /* 航贸网登录1.png in Resources */ = {isa = PBXBuildFile; fileRef = 18847BAC1A81BF540051BE0E /* 航贸网登录1.png */; };
+		18847BC31A81BF540051BE0E /* 航贸网登录背景.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 18847BAD1A81BF540051BE0E /* 航贸网登录背景.jpg */; };
+		18847BC41A81BF540051BE0E /* 航贸网登录密码.png in Resources */ = {isa = PBXBuildFile; fileRef = 18847BAE1A81BF540051BE0E /* 航贸网登录密码.png */; };
+		18847BC51A81BF540051BE0E /* 航贸网登录密码(1).png in Resources */ = {isa = PBXBuildFile; fileRef = 18847BAF1A81BF540051BE0E /* 航贸网登录密码(1).png */; };
+		18847BC61A81BF540051BE0E /* 航贸网登录密码1.png in Resources */ = {isa = PBXBuildFile; fileRef = 18847BB01A81BF540051BE0E /* 航贸网登录密码1.png */; };
+		18847BC71A81BF540051BE0E /* 航贸网登录新x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 18847BB11A81BF540051BE0E /* 航贸网登录新x.jpg */; };
+		18847BC81A81BF540051BE0E /* 航贸网登录用户名.png in Resources */ = {isa = PBXBuildFile; fileRef = 18847BB21A81BF540051BE0E /* 航贸网登录用户名.png */; };
+		18847BC91A81BF540051BE0E /* 航贸网登录用户名(1).png in Resources */ = {isa = PBXBuildFile; fileRef = 18847BB31A81BF540051BE0E /* 航贸网登录用户名(1).png */; };
+		18847BCA1A81BF540051BE0E /* 航贸网登录用户名1.png in Resources */ = {isa = PBXBuildFile; fileRef = 18847BB41A81BF540051BE0E /* 航贸网登录用户名1.png */; };
+		18847BCB1A81BF540051BE0E /* 航贸网登录x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18847BB51A81BF540051BE0E /* 航贸网登录x.png */; };
+		18847BCC1A81BF540051BE0E /* 物流(1).jpg in Resources */ = {isa = PBXBuildFile; fileRef = 18847BB61A81BF540051BE0E /* 物流(1).jpg */; };
+		18847BCD1A81BF540051BE0E /* 物流(2).jpg in Resources */ = {isa = PBXBuildFile; fileRef = 18847BB71A81BF540051BE0E /* 物流(2).jpg */; };
+		18B840CD1A198822004C3FC7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B840CC1A198822004C3FC7 /* main.m */; };
+		18B840D01A198822004C3FC7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B840CF1A198822004C3FC7 /* AppDelegate.m */; };
+		18B840D31A198822004C3FC7 /* wlkg.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 18B840D11A198822004C3FC7 /* wlkg.xcdatamodeld */; };
+		18B840D61A198822004C3FC7 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B840D51A198822004C3FC7 /* LoginViewController.m */; };
+		18B840D91A198822004C3FC7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18B840D71A198822004C3FC7 /* Main.storyboard */; };
+		18B840DB1A198822004C3FC7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18B840DA1A198822004C3FC7 /* Images.xcassets */; };
+		18B840DE1A198822004C3FC7 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18B840DC1A198822004C3FC7 /* LaunchScreen.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1838F62B1A208433006F01F1 /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
+		1843A1951A81C01D00A0C5A4 /* baobiaoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = baobiaoViewController.h; path = wlkg/baobiaoViewController.h; sourceTree = "<group>"; };
+		1843A1961A81C01D00A0C5A4 /* baobiaoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = baobiaoViewController.m; path = wlkg/baobiaoViewController.m; sourceTree = "<group>"; };
+		1843A1971A81C01D00A0C5A4 /* baoguanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = baoguanViewController.h; path = wlkg/baoguanViewController.h; sourceTree = "<group>"; };
+		1843A1981A81C01D00A0C5A4 /* baoguanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = baoguanViewController.m; path = wlkg/baoguanViewController.m; sourceTree = "<group>"; };
+		1843A1991A81C01D00A0C5A4 /* baojianViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = baojianViewController.h; path = wlkg/baojianViewController.h; sourceTree = "<group>"; };
+		1843A19A1A81C01D00A0C5A4 /* baojianViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = baojianViewController.m; path = wlkg/baojianViewController.m; sourceTree = "<group>"; };
+		1843A19B1A81C01D00A0C5A4 /* baoshuiViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = baoshuiViewController.h; path = wlkg/baoshuiViewController.h; sourceTree = "<group>"; };
+		1843A19C1A81C01D00A0C5A4 /* baoshuiViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = baoshuiViewController.m; path = wlkg/baoshuiViewController.m; sourceTree = "<group>"; };
+		1843A1A11A81C04D00A0C5A4 /* exiticon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = exiticon.png; path = wlkg/exiticon.png; sourceTree = "<group>"; };
+		1843A1A21A81C04D00A0C5A4 /* head_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = head_icon.png; path = wlkg/head_icon.png; sourceTree = "<group>"; };
+		1843A1A31A81C04D00A0C5A4 /* iconbg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iconbg.png; path = wlkg/iconbg.png; sourceTree = "<group>"; };
+		1843A1A41A81C04D00A0C5A4 /* l_n_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = l_n_bg.png; path = wlkg/l_n_bg.png; sourceTree = "<group>"; };
+		1843A1A51A81C04D00A0C5A4 /* wuliu.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = wuliu.jpg; path = wlkg/wuliu.jpg; sourceTree = "<group>"; };
+		1843A1AB1A81C06700A0C5A4 /* parser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = parser.h; path = wlkg/parser.h; sourceTree = "<group>"; };
+		1843A1AC1A81C06700A0C5A4 /* parser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = parser.m; path = wlkg/parser.m; sourceTree = "<group>"; };
+		1843A1AD1A81C06700A0C5A4 /* soap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = soap.h; path = wlkg/soap.h; sourceTree = "<group>"; };
+		1843A1AE1A81C06700A0C5A4 /* soap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = soap.m; path = wlkg/soap.m; sourceTree = "<group>"; };
+		1843A1B21A81C08300A0C5A4 /* KeychainItemWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeychainItemWrapper.h; sourceTree = "<group>"; };
+		1843A1B31A81C08300A0C5A4 /* KeychainItemWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainItemWrapper.m; sourceTree = "<group>"; };
+		18847BA21A81BF540051BE0E /* 48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 48.png; path = wlkg/48.png; sourceTree = "<group>"; };
+		18847BA31A81BF540051BE0E /* 58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 58.png; path = wlkg/58.png; sourceTree = "<group>"; };
+		18847BA41A81BF540051BE0E /* 72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 72.png; path = wlkg/72.png; sourceTree = "<group>"; };
+		18847BA51A81BF540051BE0E /* 80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 80.png; path = wlkg/80.png; sourceTree = "<group>"; };
+		18847BA61A81BF540051BE0E /* 87.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 87.png; path = wlkg/87.png; sourceTree = "<group>"; };
+		18847BA71A81BF540051BE0E /* 96.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 96.png; path = wlkg/96.png; sourceTree = "<group>"; };
+		18847BA81A81BF540051BE0E /* 120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 120.png; path = wlkg/120.png; sourceTree = "<group>"; };
+		18847BA91A81BF540051BE0E /* 144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 144.png; path = wlkg/144.png; sourceTree = "<group>"; };
+		18847BAA1A81BF540051BE0E /* 180.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 180.png; path = wlkg/180.png; sourceTree = "<group>"; };
+		18847BAB1A81BF540051BE0E /* 航贸网登录.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "航贸网登录.png"; path = "wlkg/航贸网登录.png"; sourceTree = "<group>"; };
+		18847BAC1A81BF540051BE0E /* 航贸网登录1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "航贸网登录1.png"; path = "wlkg/航贸网登录1.png"; sourceTree = "<group>"; };
+		18847BAD1A81BF540051BE0E /* 航贸网登录背景.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "航贸网登录背景.jpg"; path = "wlkg/航贸网登录背景.jpg"; sourceTree = "<group>"; };
+		18847BAE1A81BF540051BE0E /* 航贸网登录密码.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "航贸网登录密码.png"; path = "wlkg/航贸网登录密码.png"; sourceTree = "<group>"; };
+		18847BAF1A81BF540051BE0E /* 航贸网登录密码(1).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "航贸网登录密码(1).png"; path = "wlkg/航贸网登录密码(1).png"; sourceTree = "<group>"; };
+		18847BB01A81BF540051BE0E /* 航贸网登录密码1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "航贸网登录密码1.png"; path = "wlkg/航贸网登录密码1.png"; sourceTree = "<group>"; };
+		18847BB11A81BF540051BE0E /* 航贸网登录新x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "航贸网登录新x.jpg"; path = "wlkg/航贸网登录新x.jpg"; sourceTree = "<group>"; };
+		18847BB21A81BF540051BE0E /* 航贸网登录用户名.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "航贸网登录用户名.png"; path = "wlkg/航贸网登录用户名.png"; sourceTree = "<group>"; };
+		18847BB31A81BF540051BE0E /* 航贸网登录用户名(1).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "航贸网登录用户名(1).png"; path = "wlkg/航贸网登录用户名(1).png"; sourceTree = "<group>"; };
+		18847BB41A81BF540051BE0E /* 航贸网登录用户名1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "航贸网登录用户名1.png"; path = "wlkg/航贸网登录用户名1.png"; sourceTree = "<group>"; };
+		18847BB51A81BF540051BE0E /* 航贸网登录x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "航贸网登录x.png"; path = "wlkg/航贸网登录x.png"; sourceTree = "<group>"; };
+		18847BB61A81BF540051BE0E /* 物流(1).jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "物流(1).jpg"; path = "wlkg/物流(1).jpg"; sourceTree = "<group>"; };
+		18847BB71A81BF540051BE0E /* 物流(2).jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "物流(2).jpg"; path = "wlkg/物流(2).jpg"; sourceTree = "<group>"; };
+		18B840C71A198822004C3FC7 /* 掌上物流.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "掌上物流.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		18B840CB1A198822004C3FC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		18B840CC1A198822004C3FC7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		18B840CE1A198822004C3FC7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		18B840CF1A198822004C3FC7 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		18B840D21A198822004C3FC7 /* wlkg.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = wlkg.xcdatamodel; sourceTree = "<group>"; };
+		18B840D41A198822004C3FC7 /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		18B840D51A198822004C3FC7 /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		18B840D81A198822004C3FC7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		18B840DA1A198822004C3FC7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		18B840DD1A198822004C3FC7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		18B840E81A198823004C3FC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		18B840E91A198823004C3FC7 /* wlkgTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = wlkgTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		18B840C41A198822004C3FC7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1843A1B11A81C08300A0C5A4 /* KeyChainItemWrapper */ = {
+			isa = PBXGroup;
+			children = (
+				1843A1B21A81C08300A0C5A4 /* KeychainItemWrapper.h */,
+				1843A1B31A81C08300A0C5A4 /* KeychainItemWrapper.m */,
+			);
+			name = KeyChainItemWrapper;
+			path = wlkg/KeyChainItemWrapper;
+			sourceTree = "<group>";
+		};
+		18B840BE1A198822004C3FC7 = {
+			isa = PBXGroup;
+			children = (
+				1843A1B11A81C08300A0C5A4 /* KeyChainItemWrapper */,
+				18B841151A1AF1BB004C3FC7 /* baoshui */,
+				18B841121A1AEAEA004C3FC7 /* soap */,
+				18B8410B1A1993D3004C3FC7 /* img */,
+				18B840C91A198822004C3FC7 /* wlkg */,
+				18B840E61A198823004C3FC7 /* wlkgTests */,
+				18B840C81A198822004C3FC7 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		18B840C81A198822004C3FC7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				18B840C71A198822004C3FC7 /* 掌上物流.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		18B840C91A198822004C3FC7 /* wlkg */ = {
+			isa = PBXGroup;
+			children = (
+				18B840CE1A198822004C3FC7 /* AppDelegate.h */,
+				18B840CF1A198822004C3FC7 /* AppDelegate.m */,
+				18B840D41A198822004C3FC7 /* LoginViewController.h */,
+				18B840D51A198822004C3FC7 /* LoginViewController.m */,
+				18B840D71A198822004C3FC7 /* Main.storyboard */,
+				18B840DA1A198822004C3FC7 /* Images.xcassets */,
+				18B840DC1A198822004C3FC7 /* LaunchScreen.xib */,
+				18B840D11A198822004C3FC7 /* wlkg.xcdatamodeld */,
+				18B840CA1A198822004C3FC7 /* Supporting Files */,
+			);
+			path = wlkg;
+			sourceTree = "<group>";
+		};
+		18B840CA1A198822004C3FC7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1838F62B1A208433006F01F1 /* Header.h */,
+				18B840CB1A198822004C3FC7 /* Info.plist */,
+				18B840CC1A198822004C3FC7 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		18B840E61A198823004C3FC7 /* wlkgTests */ = {
+			isa = PBXGroup;
+			children = (
+				18B840E91A198823004C3FC7 /* wlkgTests.m */,
+				18B840E71A198823004C3FC7 /* Supporting Files */,
+			);
+			path = wlkgTests;
+			sourceTree = "<group>";
+		};
+		18B840E71A198823004C3FC7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				18B840E81A198823004C3FC7 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		18B8410B1A1993D3004C3FC7 /* img */ = {
+			isa = PBXGroup;
+			children = (
+				1843A1A11A81C04D00A0C5A4 /* exiticon.png */,
+				1843A1A21A81C04D00A0C5A4 /* head_icon.png */,
+				1843A1A31A81C04D00A0C5A4 /* iconbg.png */,
+				1843A1A41A81C04D00A0C5A4 /* l_n_bg.png */,
+				1843A1A51A81C04D00A0C5A4 /* wuliu.jpg */,
+				18847BA21A81BF540051BE0E /* 48.png */,
+				18847BA31A81BF540051BE0E /* 58.png */,
+				18847BA41A81BF540051BE0E /* 72.png */,
+				18847BA51A81BF540051BE0E /* 80.png */,
+				18847BA61A81BF540051BE0E /* 87.png */,
+				18847BA71A81BF540051BE0E /* 96.png */,
+				18847BA81A81BF540051BE0E /* 120.png */,
+				18847BA91A81BF540051BE0E /* 144.png */,
+				18847BAA1A81BF540051BE0E /* 180.png */,
+				18847BAB1A81BF540051BE0E /* 航贸网登录.png */,
+				18847BAC1A81BF540051BE0E /* 航贸网登录1.png */,
+				18847BAD1A81BF540051BE0E /* 航贸网登录背景.jpg */,
+				18847BAE1A81BF540051BE0E /* 航贸网登录密码.png */,
+				18847BAF1A81BF540051BE0E /* 航贸网登录密码(1).png */,
+				18847BB01A81BF540051BE0E /* 航贸网登录密码1.png */,
+				18847BB11A81BF540051BE0E /* 航贸网登录新x.jpg */,
+				18847BB21A81BF540051BE0E /* 航贸网登录用户名.png */,
+				18847BB31A81BF540051BE0E /* 航贸网登录用户名(1).png */,
+				18847BB41A81BF540051BE0E /* 航贸网登录用户名1.png */,
+				18847BB51A81BF540051BE0E /* 航贸网登录x.png */,
+				18847BB61A81BF540051BE0E /* 物流(1).jpg */,
+				18847BB71A81BF540051BE0E /* 物流(2).jpg */,
+			);
+			name = img;
+			sourceTree = "<group>";
+		};
+		18B841121A1AEAEA004C3FC7 /* soap */ = {
+			isa = PBXGroup;
+			children = (
+				1843A1AB1A81C06700A0C5A4 /* parser.h */,
+				1843A1AC1A81C06700A0C5A4 /* parser.m */,
+				1843A1AD1A81C06700A0C5A4 /* soap.h */,
+				1843A1AE1A81C06700A0C5A4 /* soap.m */,
+			);
+			name = soap;
+			sourceTree = "<group>";
+		};
+		18B841151A1AF1BB004C3FC7 /* baoshui */ = {
+			isa = PBXGroup;
+			children = (
+				1843A1951A81C01D00A0C5A4 /* baobiaoViewController.h */,
+				1843A1961A81C01D00A0C5A4 /* baobiaoViewController.m */,
+				1843A1971A81C01D00A0C5A4 /* baoguanViewController.h */,
+				1843A1981A81C01D00A0C5A4 /* baoguanViewController.m */,
+				1843A1991A81C01D00A0C5A4 /* baojianViewController.h */,
+				1843A19A1A81C01D00A0C5A4 /* baojianViewController.m */,
+				1843A19B1A81C01D00A0C5A4 /* baoshuiViewController.h */,
+				1843A19C1A81C01D00A0C5A4 /* baoshuiViewController.m */,
+			);
+			name = baoshui;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		18B840C61A198822004C3FC7 /* wlkg */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 18B840ED1A198823004C3FC7 /* Build configuration list for PBXNativeTarget "wlkg" */;
+			buildPhases = (
+				18B840C31A198822004C3FC7 /* Sources */,
+				18B840C41A198822004C3FC7 /* Frameworks */,
+				18B840C51A198822004C3FC7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = wlkg;
+			productName = wlkg;
+			productReference = 18B840C71A198822004C3FC7 /* 掌上物流.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		18B840BF1A198822004C3FC7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = leo;
+				TargetAttributes = {
+					18B840C61A198822004C3FC7 = {
+						CreatedOnToolsVersion = 6.1;
+						DevelopmentTeam = 29TSL4289R;
+					};
+				};
+			};
+			buildConfigurationList = 18B840C21A198822004C3FC7 /* Build configuration list for PBXProject "wlkg" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 18B840BE1A198822004C3FC7;
+			productRefGroup = 18B840C81A198822004C3FC7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				18B840C61A198822004C3FC7 /* wlkg */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		18B840C51A198822004C3FC7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				18847BC31A81BF540051BE0E /* 航贸网登录背景.jpg in Resources */,
+				18847BBC1A81BF540051BE0E /* 87.png in Resources */,
+				1843A1A91A81C04D00A0C5A4 /* l_n_bg.png in Resources */,
+				18847BB91A81BF540051BE0E /* 58.png in Resources */,
+				18847BB81A81BF540051BE0E /* 48.png in Resources */,
+				18847BCC1A81BF540051BE0E /* 物流(1).jpg in Resources */,
+				18847BBF1A81BF540051BE0E /* 144.png in Resources */,
+				18847BC51A81BF540051BE0E /* 航贸网登录密码(1).png in Resources */,
+				1843A1A81A81C04D00A0C5A4 /* iconbg.png in Resources */,
+				18847BBA1A81BF540051BE0E /* 72.png in Resources */,
+				18847BCD1A81BF540051BE0E /* 物流(2).jpg in Resources */,
+				18B840D91A198822004C3FC7 /* Main.storyboard in Resources */,
+				18847BC71A81BF540051BE0E /* 航贸网登录新x.jpg in Resources */,
+				1843A1A61A81C04D00A0C5A4 /* exiticon.png in Resources */,
+				18847BC81A81BF540051BE0E /* 航贸网登录用户名.png in Resources */,
+				18847BC11A81BF540051BE0E /* 航贸网登录.png in Resources */,
+				18847BCB1A81BF540051BE0E /* 航贸网登录x.png in Resources */,
+				18847BC41A81BF540051BE0E /* 航贸网登录密码.png in Resources */,
+				18847BBD1A81BF540051BE0E /* 96.png in Resources */,
+				18847BC21A81BF540051BE0E /* 航贸网登录1.png in Resources */,
+				18847BC01A81BF540051BE0E /* 180.png in Resources */,
+				18847BBB1A81BF540051BE0E /* 80.png in Resources */,
+				18847BC61A81BF540051BE0E /* 航贸网登录密码1.png in Resources */,
+				1843A1A71A81C04D00A0C5A4 /* head_icon.png in Resources */,
+				18847BBE1A81BF540051BE0E /* 120.png in Resources */,
+				18847BCA1A81BF540051BE0E /* 航贸网登录用户名1.png in Resources */,
+				18847BC91A81BF540051BE0E /* 航贸网登录用户名(1).png in Resources */,
+				1843A1AA1A81C04D00A0C5A4 /* wuliu.jpg in Resources */,
+				18B840DE1A198822004C3FC7 /* LaunchScreen.xib in Resources */,
+				18B840DB1A198822004C3FC7 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		18B840C31A198822004C3FC7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1843A1B01A81C06700A0C5A4 /* soap.m in Sources */,
+				1843A1AF1A81C06700A0C5A4 /* parser.m in Sources */,
+				18B840D01A198822004C3FC7 /* AppDelegate.m in Sources */,
+				1843A1A01A81C01D00A0C5A4 /* baoshuiViewController.m in Sources */,
+				18B840D31A198822004C3FC7 /* wlkg.xcdatamodeld in Sources */,
+				18B840D61A198822004C3FC7 /* LoginViewController.m in Sources */,
+				1843A1B41A81C08300A0C5A4 /* KeychainItemWrapper.m in Sources */,
+				1843A19D1A81C01D00A0C5A4 /* baobiaoViewController.m in Sources */,
+				1843A19F1A81C01D00A0C5A4 /* baojianViewController.m in Sources */,
+				1843A19E1A81C01D00A0C5A4 /* baoguanViewController.m in Sources */,
+				18B840CD1A198822004C3FC7 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		18B840D71A198822004C3FC7 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				18B840D81A198822004C3FC7 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		18B840DC1A198822004C3FC7 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				18B840DD1A198822004C3FC7 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		18B840EB1A198823004C3FC7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		18B840EC1A198823004C3FC7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		18B840EE1A198823004C3FC7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				INFOPLIST_FILE = wlkg/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "掌上物流";
+				PROVISIONING_PROFILE = "7286569f-8631-4ab7-8a90-3f8c6259ed09";
+				SWIFT_OBJC_BRIDGING_HEADER = "wlkg-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		18B840EF1A198823004C3FC7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				INFOPLIST_FILE = wlkg/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "掌上物流";
+				PROVISIONING_PROFILE = "7286569f-8631-4ab7-8a90-3f8c6259ed09";
+				SWIFT_OBJC_BRIDGING_HEADER = "wlkg-Bridging-Header.h";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		18B840C21A198822004C3FC7 /* Build configuration list for PBXProject "wlkg" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				18B840EB1A198823004C3FC7 /* Debug */,
+				18B840EC1A198823004C3FC7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		18B840ED1A198823004C3FC7 /* Build configuration list for PBXNativeTarget "wlkg" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				18B840EE1A198823004C3FC7 /* Debug */,
+				18B840EF1A198823004C3FC7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		18B840D11A198822004C3FC7 /* wlkg.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				18B840D21A198822004C3FC7 /* wlkg.xcdatamodel */,
+			);
+			currentVersion = 18B840D21A198822004C3FC7 /* wlkg.xcdatamodel */;
+			path = wlkg.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 18B840BF1A198822004C3FC7 /* Project object */;
+}
