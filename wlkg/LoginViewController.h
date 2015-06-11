@@ -7,21 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "parser.h"
-#import "soap.h"
 #import "KeychainItemWrapper.h"
+#import "YRSideViewController.h"
 
-@interface LoginViewController : UIViewController<stringDelegate,parser,UITextFieldDelegate>{
-    NSString *ServiceMobileApplication;
-    NSString *soapmsg1,*soapmsg2;
-    NSMutableString *soapmsg;
+@interface LoginViewController : UIViewController<UITextFieldDelegate>{
     KeychainItemWrapper *wrapper;
     KeychainItemWrapper *status;
-    KeychainItemWrapper *info;
 }
 
+@property (strong,nonatomic) YRSideViewController *sideViewController;
 @property (retain, nonatomic) IBOutlet UISwitch *autologinswitch;
-
 @property (retain, nonatomic) IBOutlet UISwitch *keepkeyswitch;
 @property (strong, nonatomic) IBOutlet UITextField *ID;
 @property (strong, nonatomic) IBOutlet UIButton *signin;

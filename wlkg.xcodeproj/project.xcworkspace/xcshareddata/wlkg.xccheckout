@@ -11,7 +11,7 @@
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>AE07B0321EC7E4258AE1ED677F2B1F04163BDE44</key>
-		<string>https://github.com/leooooooooo/wlkg.git</string>
+		<string>ssh://rjzxmac.local/git/wlkg.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>wlkg.xcodeproj</string>
@@ -21,7 +21,7 @@
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/leooooooooo/wlkg.git</string>
+	<string>ssh://rjzxmac.local/git/wlkg.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
