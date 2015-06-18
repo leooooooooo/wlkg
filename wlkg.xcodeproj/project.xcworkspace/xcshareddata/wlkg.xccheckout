@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>1B304001-98B1-4AD0-BDF4-D7E1C21871F9</string>
 	<key>IDESourceControlProjectName</key>
-	<string>wlkg</string>
+	<string>project</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>AE07B0321EC7E4258AE1ED677F2B1F04163BDE44</key>
 		<string>ssh://rjzxmac.local/git/wlkg.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>wlkg.xcodeproj</string>
+	<string>wlkg.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>AE07B0321EC7E4258AE1ED677F2B1F04163BDE44</key>

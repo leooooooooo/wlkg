@@ -9,7 +9,18 @@
 #import "FunctionListTableViewController.h"
 #import "Header.h"
 #import "JRZJCLViewController.h"
-
+#import "SRCBViewController.h"
+#import "GSZCLDFZQKViewController.h"
+#import "LRYDQKViewController.h"
+#import "BNJZXDLLQSFXViewController.h"
+#import "BNSZHDLLQSFXViewController.h"
+#import "BNCBDLLQSFXViewController.h"
+#import "JRBBGSYWQKViewController.h"
+#import "JRBSJCLViewController.h"
+#import "JRFYYWQKViewController.h"
+#import "JRCCJCLViewController.h"
+#import "JRMYQKViewController.h"
+#import "GGSNDLRQKViewController.h"
 
 @interface FunctionListTableViewController ()
 
@@ -20,7 +31,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    UIBarButtonItem *backButton = [[[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil]autorelease];
+    UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
     [self.navigationItem setBackBarButtonItem:backButton];
     [self.navigationController.navigationBar setTintColor:NavigationBackArrowColor];
     [self.navigationController.navigationBar setBarTintColor:NavigationBarColor];
@@ -88,11 +99,11 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:customXibCellIdentifier];
     if(cell == nil){
         //使用默认的UITableViewCell,但是不使用默认的image与text，改为添加自定义的控件
-        cell = [[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:customXibCellIdentifier]autorelease];
+        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:customXibCellIdentifier];
         
         //头像
         CGRect imageRect = CGRectMake(8, 5, 35, 35);
-        UIImageView *imageView = [[[UIImageView alloc]initWithFrame:imageRect]autorelease];
+        UIImageView *imageView = [[UIImageView alloc]initWithFrame:imageRect];
         imageView.tag = 2;
         
         //为图片添加边框
@@ -107,7 +118,7 @@
         CGPoint i =imageRect.origin;
         CGSize j = imageRect.size;
         CGRect nameRect = CGRectMake(i.x+j.width+10, i.y+13, self.view.bounds.size.width/1.5, 10);
-        UILabel *nameLabel = [[[UILabel alloc]initWithFrame:nameRect]autorelease];
+        UILabel *nameLabel = [[UILabel alloc]initWithFrame:nameRect];
         nameLabel.font = [UIFont systemFontOfSize:16];
         nameLabel.tag = 1;
         //nameLabel.textColor = [UIColor brownColor];
@@ -129,26 +140,69 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-
     NSDictionary *dic  = [self.List objectAtIndex:indexPath.row];
     int mark = [[dic objectForKey:@"mark"] intValue];
+    NSString *name =[dic objectForKey:@"name"];
+    UIViewController *vc = [[UIViewController alloc]init];
     switch (mark) {
-        case 1:
-            [self JRZJCL];
+        case 1:{
+            vc = [[JRZJCLViewController alloc]init];
+        };
             break;
-            
+        case 2:{
+            vc = [[SRCBViewController alloc]init];
+        };
+            break;
+        case 3:{
+            vc = [[GSZCLDFZQKViewController alloc]init];
+        };
+            break;
+        case 4:{
+            vc = [[LRYDQKViewController alloc]init];
+        };
+            break;
+        case 5:{
+            vc = [[BNJZXDLLQSFXViewController alloc]init];
+        };
+            break;
+        case 6:{
+            vc = [[BNSZHDLLQSFXViewController alloc]init];
+        };
+            break;
+        case 7:{
+            vc = [[BNCBDLLQSFXViewController alloc]init];
+        };
+            break;
+        case 8:{
+            vc = [[JRBSJCLViewController alloc]init];
+        };
+            break;
+        case 9:{
+            vc = [[JRMYQKViewController alloc]init];
+        };
+            break;
+        case 10:{
+            vc = [[JRCCJCLViewController alloc]init];
+        };
+            break;
+        case 11:{
+            vc = [[JRFYYWQKViewController alloc]init];
+        };
+            break;
+        case 12:{
+            vc = [[JRBBGSYWQKViewController alloc]init];
+            break;
+        };
+        case 13:{
+            vc = [[GGSNDLRQKViewController alloc]init];
+        };
+            break;
         default:
             break;
+            
     }
-
-}
-
-- (void)JRZJCL
-{
-    JRZJCLViewController *vc = [[JRZJCLViewController alloc]init];
+    vc.title = name;
     [self.navigationController pushViewController:vc animated:YES];
 }
-
-
 
 @end

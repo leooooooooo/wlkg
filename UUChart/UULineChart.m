@@ -187,18 +187,22 @@
         float grade = ((float)firstValue-_yValueMin) / ((float)_yValueMax-_yValueMin);
        
         //第一个点
-        BOOL isShowMaxAndMinPoint = YES;
+        BOOL isShowMaxAndMinPoint = NO;
+        BOOL UpAndDown = YES;
+        
         if (self.ShowMaxMinArray) {
             if ([self.ShowMaxMinArray[i] intValue]>0) {
-                isShowMaxAndMinPoint = (max_i==0 || min_i==0)?NO:YES;
+                UpAndDown = YES;
             }else{
-                isShowMaxAndMinPoint = YES;
+                UpAndDown = NO;
             }
         }
+        
         [self addPoint:CGPointMake(xPosition, chartCavanHeight - grade * chartCavanHeight+UULabelHeight)
                  index:i
                 isShow:isShowMaxAndMinPoint
-                 value:firstValue];
+                 value:firstValue
+                UpAndDown:UpAndDown];
 
         
         [progressline moveToPoint:CGPointMake(xPosition, chartCavanHeight - grade * chartCavanHeight+UULabelHeight)];
@@ -214,7 +218,8 @@
                 CGPoint point = CGPointMake(xPosition+index*_xLabelWidth, chartCavanHeight - grade * chartCavanHeight+UULabelHeight);
                 [progressline addLineToPoint:point];
                 
-                BOOL isShowMaxAndMinPoint = YES;
+                BOOL isShowMaxAndMinPoint = NO;
+                /*
                 if (self.ShowMaxMinArray) {
                     if ([self.ShowMaxMinArray[i] intValue]>0) {
                         isShowMaxAndMinPoint = (max_i==index || min_i==index)?NO:YES;
@@ -222,11 +227,13 @@
                         isShowMaxAndMinPoint = YES;
                     }
                 }
+                 */
                 [progressline moveToPoint:point];
                 [self addPoint:point
                          index:i
                         isShow:isShowMaxAndMinPoint
-                         value:[valueString floatValue]];
+                         value:[valueString floatValue]
+                        UpAndDown:UpAndDown];
                 
 //                [progressline stroke];
             }
@@ -251,7 +258,7 @@
     }
 }
 
-- (void)addPoint:(CGPoint)point index:(NSInteger)index isShow:(BOOL)isHollow value:(CGFloat)value
+- (void)addPoint:(CGPoint)point index:(NSInteger)index isShow:(BOOL)isHollow value:(CGFloat)value UpAndDown:(BOOL)UpAndDown
 {
     UIView *view = [[UIView alloc]initWithFrame:CGRectMake(5, 5, 8, 8)];
     view.center = point;
@@ -264,7 +271,7 @@
         view.backgroundColor = [UIColor whiteColor];
     }else{
         view.backgroundColor = [_colors objectAtIndex:index]?[_colors objectAtIndex:index]:UUGreen;
-        UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(point.x-UUTagLabelwidth/2.0, point.y-UULabelHeight*2, UUTagLabelwidth, UULabelHeight)];
+        UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(point.x-UUTagLabelwidth/2.0, point.y-UULabelHeight*(UpAndDown?2:-1), UUTagLabelwidth, UULabelHeight)];
         label.font = [UIFont systemFontOfSize:10];
         label.textAlignment = NSTextAlignmentCenter;
         label.textColor = view.backgroundColor;

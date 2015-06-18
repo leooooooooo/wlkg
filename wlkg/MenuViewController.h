@@ -7,13 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Update.h"
 @protocol LeftDelegate <NSObject>
 @optional
 - (void)Logout;
+- (void)ChangePassword;
+- (void)ChangeInfo;
 @end
 
 
-@interface MenuTableViewController : UITableViewController
+@interface MenuViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
 @property(assign,nonatomic)id<LeftDelegate>LeftDelegate;
-
+@property(retain,nonatomic)id<UpdateDelegate>UpdateDelegate;
 @end

@@ -1,43 +1,43 @@
 //
-//  JRZJCLViewController.m
+//  LRYDQKViewController.m
 //  wlkg
 //
-//  Created by zhangchao on 15/6/10.
+//  Created by zhangchao on 15/6/16.
 //  Copyright (c) 2015年 leo. All rights reserved.
 //
 
-#import "JRZJCLViewController.h"
+#import "LRYDQKViewController.h"
 #import "Header.h"
 
-
-@interface JRZJCLViewController ()
-
-@property (nonatomic,retain) NSArray *ChartDate;
-@property (nonatomic,retain) NSArray *ChartFund;
-@property (nonatomic,retain) NSArray *ChartDOD;
-
+@interface LRYDQKViewController ()
+@property (nonatomic,retain) NSArray *ChartMonth;
+@property (nonatomic,retain) NSArray *ChartLastProfi;
+@property (nonatomic,retain) NSArray *ChartPlan;
+@property (nonatomic,retain) NSArray *ChartProfit;
+@property (nonatomic,retain) NSArray *ChartCashRate;
 @end
 
-@implementation JRZJCLViewController
+@implementation LRYDQKViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
     
-
-/*
-    NSArray *Date = [[NSArray alloc] initWithObjects:@"06-01",@"06-02",@"06-03",@"06-04",@"06-05",nil];
-    NSArray *Fund =[[NSArray alloc] initWithObjects:@"22",@"44",@"15",@"12",@"45",nil];
-    NSArray *DOD = [[NSArray alloc] initWithObjects:@"+3.87%",@"+3.87%",@"+3.87%",@"-3.87%",@"-3.87%",@"+3.87%",@"+3.87%",@"+3.87%",@"-3.87%",nil];
-    NSDictionary *data = [NSDictionary dictionaryWithObjectsAndKeys:Date,@"Date",Fund,@"Fund",DOD,@"DOD", nil];
- 
-    self.ChartDate = [data objectForKey:@"Date"];
-    self.ChartFund = [data objectForKey:@"Fund"];
-    self.ChartDOD = [data objectForKey:@"FundInterval"];
-    */
+    
+    /*
+     NSArray *Date = [[NSArray alloc] initWithObjects:@"06-01",@"06-02",@"06-03",@"06-04",@"06-05",nil];
+     NSArray *Fund =[[NSArray alloc] initWithObjects:@"22",@"44",@"15",@"12",@"45",nil];
+     NSArray *DOD = [[NSArray alloc] initWithObjects:@"+3.87%",@"+3.87%",@"+3.87%",@"-3.87%",@"-3.87%",@"+3.87%",@"+3.87%",@"+3.87%",@"-3.87%",nil];
+     NSDictionary *data = [NSDictionary dictionaryWithObjectsAndKeys:Date,@"Date",Fund,@"Fund",DOD,@"DOD", nil];
+     
+     self.ChartDate = [data objectForKey:@"Date"];
+     self.ChartFund = [data objectForKey:@"Fund"];
+     self.ChartDOD = [data objectForKey:@"FundInterval"];
+     */
     
     self.view.backgroundColor = [UIColor whiteColor];
+    
     
     
     [self loadChartAndTabel];
@@ -55,7 +55,7 @@
     //1)post请求方式,网络请求默认是get方法，所以如果我们用post请求，必须声明请求方式。
     [request setHTTPMethod:@"POST"];
     //2)post请求的数据体,post请求中数据体时，如果有中文，不需要转换。因为ataUsingEncoding方法已经实现了转码。
-    NSString *bodyStr = [NSString stringWithFormat:@"ServiceNum=%@",@"0"];
+    NSString *bodyStr = [NSString stringWithFormat:@"ServiceNum=%@",@"4"];
     //将nstring转换成nsdata
     NSData *body = [bodyStr dataUsingEncoding:NSUTF8StringEncoding];
     //NSLog(@"body data %@", body);
@@ -68,9 +68,11 @@
             //NSString *str = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
             NSDictionary *Info = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
             NSLog(@"%@", Info);
-            self.ChartDate = [Info objectForKey:@"Date"];
-            self.ChartFund = [Info objectForKey:@"Fund"];
-            self.ChartDOD = [Info objectForKey:@"FundPercent"];
+            self.ChartMonth = [Info objectForKey:@"Month"];
+            self.ChartLastProfi = [Info objectForKey:@"LastProfi"];
+            self.ChartPlan  = [Info objectForKey:@"Plan"];
+            self.ChartProfit = [Info objectForKey:@"Profit"];
+            self.ChartCashRate = [Info objectForKey:@"CashRate"];
             
             //Chart
             UUChart *chartView = [[UUChart alloc]initwithUUChartDataFrame:CGRectMake(10, 70, WIDTH-20, HEIGHT/5)
@@ -79,7 +81,7 @@
             [chartView showInView:self.view];
             CGPoint i = chartView.frame.origin;
             CGSize j = chartView.frame.size;
-
+            
             //Tabel
             UITableView *tableview = [[UITableView alloc]initWithFrame:CGRectMake(i.x-10, (i.y+j.height)+10,WIDTH, (HEIGHT-i.y-j.height)-10) style:UITableViewStylePlain];
             tableview.dataSource=self;
@@ -89,7 +91,7 @@
             tableview.tableFooterView = [[UIView alloc] init];
             tableview.backgroundColor = [UIColor whiteColor];
             [self.view addSubview:tableview];
-
+            
         }
         else
         {
@@ -118,7 +120,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     //#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return self.ChartDate.count;
+    return self.ChartMonth.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -142,14 +144,14 @@
         [cell.contentView addSubview:DateLabel];
         
         //Fund
-        CGRect FundRect = CGRectMake(WIDTH/2-25, i.y, 50, 22);
+        CGRect FundRect = CGRectMake(WIDTH/2-25, i.y, 70, 22);
         UILabel *FundLabel = [[UILabel alloc]initWithFrame:FundRect];
         i = FundRect.origin;
         j = FundRect.size;
         FundLabel.font = [UIFont systemFontOfSize:16];
         FundLabel.tag = 2;
         FundLabel.textAlignment= NSTextAlignmentCenter;
-        //nameLabel.textColor = [UIColor brownColor];
+        FundLabel.textColor = UUGreen;
         [cell.contentView addSubview:FundLabel];
         
         //DOD
@@ -158,7 +160,7 @@
         DODLabel.font = [UIFont systemFontOfSize:16];
         DODLabel.tag = 3;
         DODLabel.textAlignment= NSTextAlignmentCenter;
-        DODLabel.textColor = [UIColor whiteColor];
+        DODLabel.textColor = UURed;
         //为图片添加边框
         CALayer *layer = [DODLabel layer];
         layer.cornerRadius = 4;
@@ -167,16 +169,14 @@
         layer.masksToBounds = YES;
         [cell.contentView addSubview:DODLabel];
     }
-
-    //Date
-    ((UILabel *)[cell.contentView viewWithTag:1]).text = [[[self.ChartDate reverseObjectEnumerator] allObjects] objectAtIndex:indexPath.row];
-    //Fund
-    ((UILabel *)[cell.contentView viewWithTag:2]).text = [[[self.ChartFund reverseObjectEnumerator] allObjects]objectAtIndex:indexPath.row];
-    //DOD
-    NSString *DOD =[[[self.ChartDOD reverseObjectEnumerator] allObjects]objectAtIndex:indexPath.row];
-    ((UILabel *)[cell.contentView viewWithTag:3]).backgroundColor = [DOD rangeOfString:@"+"].location!=NSNotFound?UURed:UUGreen;
-    ((UILabel *)[cell.contentView viewWithTag:3]).text = DOD;
-
+    
+    //Month
+    ((UILabel *)[cell.contentView viewWithTag:1]).text = [[[self.ChartMonth reverseObjectEnumerator] allObjects] objectAtIndex:indexPath.row];
+    //Income
+    ((UILabel *)[cell.contentView viewWithTag:2]).text = [[[self.ChartPlan reverseObjectEnumerator] allObjects]objectAtIndex:indexPath.row];
+    //Cost
+    ((UILabel *)[cell.contentView viewWithTag:3]).text = [[[self.ChartProfit reverseObjectEnumerator] allObjects]objectAtIndex:indexPath.row];
+    
     cell.userInteractionEnabled = NO;
     return cell;
 }
@@ -199,7 +199,7 @@
     CGSize  j = Date.frame.size;
     Date.textColor=[UIColor whiteColor];
     Date.backgroundColor = [UIColor clearColor];
-    Date.text=@"日期";
+    Date.text=@"月份";
     Date.textAlignment= NSTextAlignmentCenter;
     [myView addSubview:Date];
     //Fund
@@ -208,17 +208,17 @@
     j = Fund.frame.size;
     Fund.textColor=[UIColor whiteColor];
     Fund.backgroundColor = [UIColor clearColor];
-    Fund.text=@"资金(百万元)";
+    Fund.text=@"计划利润(万元)";
     Fund.textAlignment= NSTextAlignmentCenter;
     [myView addSubview:Fund];
     //DOD
     UILabel *DOD = [[UILabel alloc]initWithFrame:CGRectMake(WIDTH-95, i.y, 85, 20)];
     DOD.textColor=[UIColor whiteColor];
     DOD.backgroundColor = [UIColor clearColor];
-    DOD.text=@"相比前日";
+    DOD.text=@"实际利润";
     DOD.textAlignment= NSTextAlignmentCenter;
     [myView addSubview:DOD];
-
+    
     return myView;
 }
 
@@ -231,12 +231,12 @@
 //横坐标标题数组
 - (NSArray *)UUChart_xLableArray:(UUChart *)chart
 {
-    return self.ChartDate;
+    return self.ChartMonth;
 }
 //数值多重数组
 - (NSArray *)UUChart_yValueArray:(UUChart *)chart
 {
-    return @[self.ChartFund];
+    return @[self.ChartProfit];
 }
 
 #pragma mark - @optional
@@ -248,19 +248,20 @@
 //显示数值范围
 - (CGRange)UUChartChooseRangeInLineChart:(UUChart *)chart
 {
-
-    NSInteger max = [[self.ChartFund valueForKeyPath:@"@max.intValue"] integerValue];
-    NSInteger min =[[self.ChartFund valueForKeyPath:@"@min.intValue"] integerValue];
-    return CGRangeMake(max*1.2, min*0.8);
+    
+    NSInteger max = [[self.ChartProfit valueForKeyPath:@"@max.intValue"] integerValue];
+    NSInteger min =[[self.ChartProfit valueForKeyPath:@"@min.intValue"] integerValue];
+    
+    return max<0?CGRangeMake(max*0.8, min*1.2):CGRangeMake(max*1.2, min*0.8);
 }
 
 #pragma mark 折线图专享功能
 /*
-//标记数值区域
-- (CGRange)UUChartMarkRangeInLineChart:(UUChart *)chart
-{
-    return CGRangeMake(25, 75);
-}
+ //标记数值区域
+ - (CGRange)UUChartMarkRangeInLineChart:(UUChart *)chart
+ {
+ return CGRangeMake(25, 75);
+ }
  */
 
 //判断显示横线条

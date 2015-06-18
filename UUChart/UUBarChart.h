@@ -13,6 +13,7 @@
 #define yLabelMargin    15
 #define UULabelHeight   10
 #define UUYLabelwidth   30
+#define UUTagLabelwidth     80
 
 @interface UUBarChart : UIView
 

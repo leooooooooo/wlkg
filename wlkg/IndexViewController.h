@@ -8,11 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "KeychainItemWrapper.h"
-#import "MenuTableViewController.h"
+#import "MenuViewController.h"
 
 @protocol NavigationDelegate <NSObject>
 @optional
 - (void)showLeftViewController:(BOOL)animated;
+- (void)hideSideViewController:(BOOL)animated;
 - (void)setneedSwipeShowMenu:(BOOL)animated;
 @end
 

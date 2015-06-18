@@ -129,8 +129,38 @@
             bar.grade = grade;
             [myScrollView addSubview:bar];
             
+
+            [self addPoint:CGPointMake((j+(_yValues.count==1?0.1:0.05))*_xLabelWidth +i*_xLabelWidth * 0.47+32+120/childAry.count, chartCavanHeight - grade * chartCavanHeight+UULabelHeight)
+                     index:i
+                    isShow:NO
+                     value:value];
         }
     }
 }
+
+- (void)addPoint:(CGPoint)point index:(NSInteger)index isShow:(BOOL)isHollow value:(CGFloat)value
+{
+    UIView *view = [[UIView alloc]initWithFrame:CGRectMake(5, 5, 8, 8)];
+    view.center = point;
+    view.layer.masksToBounds = YES;
+    view.layer.cornerRadius = 100;
+    view.layer.borderWidth = 2;
+    view.layer.borderColor = [[_colors objectAtIndex:index] CGColor]?[[_colors objectAtIndex:index] CGColor]:UUGreen.CGColor;
+    
+    if (isHollow) {
+        view.backgroundColor = [UIColor whiteColor];
+    }else{
+        view.backgroundColor = [_colors objectAtIndex:index]?[_colors objectAtIndex:index]:UUGreen;
+        UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(point.x-UUTagLabelwidth/2.0, point.y-UULabelHeight*2, UUTagLabelwidth, UULabelHeight)];
+        label.font = [UIFont systemFontOfSize:10];
+        label.textAlignment = NSTextAlignmentCenter;
+        label.textColor = view.backgroundColor;
+        label.text = [NSString stringWithFormat:@"%d",(int)value];
+        [self addSubview:label];
+    }
+    
+    [self addSubview:view];
+}
+
 
 @end
