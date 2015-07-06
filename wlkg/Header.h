@@ -15,4 +15,8 @@
 #define AppName @"WLKG"
 #define WIDTH self.view.bounds.size.width
 #define HEIGHT self.view.bounds.size.height
+#define PAGE1 @"首页"
+#define PAGE2 @"签到"
+#define PAGE3 @"我的应用"
+#define PAGE4 @"最新消息"
 #endif

@@ -10,10 +10,7 @@
 #import "Header.h"
 #import "AppDelegate.h"
 #import "FunctionListTableViewController.h"
-#import "LoginViewController.h"
-#import "baoshuiViewController.h"
-#import "ChangePasswordViewController.h"
-#import "ChangeInfoViewController.h"
+
 
 
 static NSString *kcellIdentifier = @"collectionCellID";
@@ -25,38 +22,13 @@ static NSString *kcellIdentifier = @"collectionCellID";
 
 @implementation IndexViewController
 
-- (void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
-    [self.NavigationDelegate setneedSwipeShowMenu:true];
-}
 
--(void)viewDidDisappear:(BOOL)animated
-{
-    [super viewDidDisappear:animated];
-    [self.NavigationDelegate setneedSwipeShowMenu:false];
-}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
-    
-    //返回按钮
-    UIBarButtonItem *backButton = [[[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil]autorelease];
-    [self.navigationItem setBackBarButtonItem:backButton];
-    //导航栏按钮文字颜色+返回按钮颜色
-    [self.navigationController.navigationBar setTintColor:NavigationBackArrowColor];
-    //导航栏颜色
-    [self.navigationController.navigationBar setBarTintColor:NavigationBarColor];
-    
-    //导航栏标题颜色
-    NSDictionary *dict = [NSDictionary dictionaryWithObject:NavigationTitleColor forKey:NSForegroundColorAttributeName];
-    self.navigationController.navigationBar.titleTextAttributes=dict;
-    //导航栏标题
-    self.navigationItem.title =@"首页";//[(AppDelegate *)[[UIApplication sharedApplication]delegate]UserName];
-    //导航栏左按钮
-    //self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithImage:[self reSizeImage:[UIImage imageNamed:@"登录_07"] toSize:CGSizeMake(20, 24)] style:UIBarButtonItemStylePlain target:self.navigationController action:@selector(toggleMenu)];
+    /*
     //背景图片
     UIImageView *imageView = [[[UIImageView alloc] initWithFrame:self.view.bounds]autorelease];
     imageView.image = [UIImage imageNamed:@"登录"];
@@ -74,19 +46,13 @@ static NSString *kcellIdentifier = @"collectionCellID";
     CGSize j = webview.frame.size;
     
     [self.view addSubview:webview];
-    
-    //退出登陆button
-    /*
-    UIBarButtonItem *logoutButton =[[UIBarButtonItem alloc]initWithTitle:@"登出" style:UIBarButtonItemStylePlain target:self action:@selector(Logout)];
-    [self.navigationItem setRightBarButtonItem:logoutButton];
     */
-    //菜单BUTTON
-    UIBarButtonItem *Menu = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"the_arrow.png"] style:UIBarButtonItemStylePlain target:self action:@selector(showMenu)];
-    [self.navigationItem setLeftBarButtonItem:Menu];
-    
+    //背景+标题
+    self.view.backgroundColor  = NavigationBackArrowColor;
+
     //九宫格
     UICollectionViewFlowLayout *layout= [[[UICollectionViewFlowLayout alloc]init]autorelease];
-    UICollectionView *collectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(i.x, i.y+j.height, WIDTH, HEIGHT*2/3-60) collectionViewLayout:layout];
+    UICollectionView *collectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 0, WIDTH, HEIGHT) collectionViewLayout:layout];
     collectionView.delegate=self;
     collectionView.dataSource=self;
     [collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:kcellIdentifier];
@@ -95,33 +61,8 @@ static NSString *kcellIdentifier = @"collectionCellID";
     [self.view addSubview:collectionView];
 }
 
--(void)showMenu
-{
-    [self.NavigationDelegate showLeftViewController:true];
-}
 
--(void)Logout
-{
-    status =[[KeychainItemWrapper alloc] initWithIdentifier:@"status"accessGroup:Bundle];
-    [status setObject:@"0" forKey:(id)kSecValueData];
-    [super dismissViewControllerAnimated:YES completion:nil];
-    
 
-}
-
--(void)ChangePassword
-{
-    [self.NavigationDelegate hideSideViewController:true];
-    ChangePasswordViewController *vc =[[ChangePasswordViewController alloc]init];
-        [self.navigationController pushViewController:vc animated:YES];
-}
-
--(void)ChangeInfo
-{
-    [self.NavigationDelegate hideSideViewController:true];
-    ChangeInfoViewController *vc =[[ChangeInfoViewController alloc]init];
-    [self.navigationController pushViewController:vc animated:YES];
-}
 
 #pragma mark -CollectionView datasource
 //section
@@ -132,7 +73,7 @@ static NSString *kcellIdentifier = @"collectionCellID";
 //item个数
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return 6;
+    return 12;
     
 }
 
@@ -197,15 +138,58 @@ static NSString *kcellIdentifier = @"collectionCellID";
     NSDictionary *dic11 = [[[NSDictionary alloc]initWithObjectsAndKeys:@"今日发运业务情况",@"name",@"icon_0",@"image",@"11",@"mark",nil]autorelease];
     NSDictionary *dic12 = [[[NSDictionary alloc]initWithObjectsAndKeys:@"今日B保公司业务情况",@"name",@"icon_0",@"image",@"12",@"mark",nil]autorelease];
     NSDictionary *dic13 = [[[NSDictionary alloc]initWithObjectsAndKeys:@"各公司年度盈利情况",@"name",@"icon_4",@"image",@"13",@"mark",nil]autorelease];
+    NSDictionary *dic14 = [[[NSDictionary alloc]initWithObjectsAndKeys:@"报关查询",@"name",@"icon_3",@"image",@"14",@"mark",nil]autorelease];
+    NSDictionary *dic15 = [[[NSDictionary alloc]initWithObjectsAndKeys:@"报检查询",@"name",@"icon_3",@"image",@"15",@"mark",nil]autorelease];
+    
     FunctionListTableViewController *view = [[[FunctionListTableViewController alloc]initWithStyle:UITableViewStylePlain]autorelease];
     switch (num) {
         case 0:
-            view.title = @"综合分析";
-            view.List=[[NSArray alloc]initWithObjects:dic5,dic6,dic7,dic8,dic9,dic10,dic11,dic12, nil];
+            view.title = @"今日快报";
+            view.List=[[NSArray alloc]initWithObjects:dic1,dic8,dic9,dic10,dic11,dic12, nil];
+            break;
+        case 1:
+            view.title = @"协同办公";
+            //view.List=[[NSArray alloc]initWithObjects:dic5,dic6,dic7,dic8,dic9,dic10,dic11,dic12, nil];
+            break;
+        case 2:
+            view.title = @"公司新闻";
+            //view.List=[[NSArray alloc]initWithObjects:dic5,dic6,dic7,dic8,dic9,dic10,dic11,dic12, nil];
+            break;
+        case 3:
+            view.title = @"业务中心";
+            view.List=[[NSArray alloc]initWithObjects:dic14,dic15, nil];
             break;
         case 4:
+            view.title = @"审批中心";
+            //view.List=[[NSArray alloc]initWithObjects:dic1,dic2,dic3,dic4,dic13, nil];
+            break;
+        case 5:
+            view.title = @"报表中心";
+            //view.List=[[NSArray alloc]initWithObjects:dic1,dic2,dic3,dic4,dic13, nil];
+            break;
+        case 6:
+            view.title = @"业务分析";
+            view.List=[[NSArray alloc]initWithObjects:dic5,dic6,dic7, nil];
+            break;
+        case 7:
             view.title = @"财务管理";
-            view.List=[[NSArray alloc]initWithObjects:dic1,dic2,dic3,dic4,dic13, nil];
+            view.List=[[NSArray alloc]initWithObjects:dic2,dic3,dic4,dic13, nil];
+            break;
+        case 8:
+            view.title = @"运营监控";
+            //view.List=[[NSArray alloc]initWithObjects:dic1,dic2,dic3,dic4,dic13, nil];
+            break;
+        case 9:
+            view.title = @"设备运行";
+            //view.List=[[NSArray alloc]initWithObjects:dic1,dic2,dic3,dic4,dic13, nil];
+            break;
+        case 10:
+            view.title = @"能源消耗";
+            //view.List=[[NSArray alloc]initWithObjects:dic1,dic2,dic3,dic4,dic13, nil];
+            break;
+        case 11:
+            view.title = @"员工通信录";
+            //view.List=[[NSArray alloc]initWithObjects:dic1,dic2,dic3,dic4,dic13, nil];
             break;
         default:
             break;

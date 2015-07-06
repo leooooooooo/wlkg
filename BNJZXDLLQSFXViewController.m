@@ -61,7 +61,7 @@
             //Chart
             UUChart *chartView = [[UUChart alloc]initwithUUChartDataFrame:CGRectMake(10, 70, WIDTH-20, HEIGHT/5)
                                                                withSource:self
-                                                                withStyle:UUChartBarStyle];
+                                                                withStyle:UUChartLineStyle];
             [chartView showInView:self.view];
             CGPoint i = chartView.frame.origin;
             CGSize j = chartView.frame.size;

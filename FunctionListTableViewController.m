@@ -21,6 +21,8 @@
 #import "JRCCJCLViewController.h"
 #import "JRMYQKViewController.h"
 #import "GGSNDLRQKViewController.h"
+#import "BGCXViewController.h"
+#import "BJCXViewController.h"
 
 @interface FunctionListTableViewController ()
 
@@ -195,6 +197,14 @@
         };
         case 13:{
             vc = [[GGSNDLRQKViewController alloc]init];
+        };
+            break;
+        case 14:{
+            vc = [[BGCXViewController alloc]init];
+        };
+            break;
+        case 15:{
+            vc = [[BJCXViewController alloc]init];
         };
             break;
         default:

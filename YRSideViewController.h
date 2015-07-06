@@ -10,7 +10,7 @@
  *	@class	侧边栏控制器,5.0以上系统使用
  */
 #import <UIKit/UIKit.h>
-#import "IndexViewController.h"
+#import "MainTabBarViewController.h"
 
 typedef void(^RootViewMoveBlock)(UIView *rootView,CGRect orginFrame,CGFloat xoffset);
 

@@ -33,6 +33,7 @@
      UILabel *welcome =[[UILabel alloc]initWithFrame:CGRectMake(30, HEIGHT/8, WIDTH, 100)];
      welcome.numberOfLines = 2;
     welcome.textColor = [UIColor whiteColor];
+    welcome.font = [UIFont systemFontOfSize:13];
      welcome.text=[NSString stringWithFormat:@"你好,%@\n欢迎使用物流控股移动应用",[(AppDelegate *)[[UIApplication sharedApplication]delegate]UserName]];
     [self.view addSubview:welcome];
 
@@ -43,7 +44,7 @@
     NSDictionary *dic4 = [[NSDictionary alloc]initWithObjectsAndKeys:@"检查更新",@"name",@"22_12",@"image",@"4",@"mark",nil];
     NSDictionary *dic5 = [[NSDictionary alloc]initWithObjectsAndKeys:@"登出",@"name",@"22_14",@"image",@"5",@"mark",nil];
 
-    List = [[NSArray alloc]initWithObjects:dic1,dic2,dic4,dic5, nil];
+    List = [[NSArray alloc]initWithObjects:dic2,dic4,dic5, nil];
     tableView.tableFooterView = [[UIView alloc]init];
     tableView.delegate = self;
     tableView.dataSource=self;

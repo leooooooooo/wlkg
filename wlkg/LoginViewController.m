@@ -11,6 +11,8 @@
 #import "Header.h"
 #import "MenuViewController.h"
 #import "IndexViewController.h"
+#import "MainTabBarViewController.h"
+#import "MainNavigationController.h"
 
 #define UpdateAlertViewTag 1
 
@@ -143,8 +145,9 @@
                 delegate.UserName=[Info objectForKey:@"UserName"] ;
                 delegate.Department = [Info objectForKey:@"Department"];
                 
-                IndexViewController *index =[[IndexViewController alloc]initWithNibName:nil bundle:nil];
-                UINavigationController *mainViewController=[[[UINavigationController alloc]initWithRootViewController:index]autorelease];
+                //IndexViewController *index =[[IndexViewController alloc]initWithNibName:nil bundle:nil];
+                MainTabBarViewController *index = [[MainTabBarViewController alloc]init];
+                MainNavigationController *mainViewController=[[[MainNavigationController alloc]initWithRootViewController:index]autorelease];
                 //mainViewController.view.backgroundColor=[UIColor grayColor];
                 
                 MenuViewController *leftViewController=[[MenuViewController alloc]initWithNibName:nil bundle:nil];
@@ -153,9 +156,9 @@
                 _sideViewController=[[YRSideViewController alloc]initWithNibName:nil bundle:nil];
                 _sideViewController.rootViewController=mainViewController;
                 _sideViewController.leftViewController=leftViewController;
+                
                 index.NavigationDelegate=_sideViewController;
                 leftViewController.LeftDelegate = index;
-                //leftViewController.ReloadDelegate = mainViewController;
                 _sideViewController.leftViewShowWidth=self.view.bounds.size.width*4/5;
                 //index.setneedSwipeShowMenu=YES;//默认开启的可滑动展示
 
@@ -168,7 +171,7 @@
                 */
                 
                 [self presentViewController:_sideViewController animated:YES completion:nil];
-                
+                //[self performSegueWithIdentifier:@"index" sender:self];
                 
                 //保存按钮状态
                 if(self.keepkeyswitch.isOn)
