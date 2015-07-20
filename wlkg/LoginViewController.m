@@ -39,7 +39,7 @@
     self.UpdateDelegate = [[Update alloc]init];
     [self.UpdateDelegate GetUpdateInfo:self.view];
     //当前版本
-    UILabel *Version = [[[UILabel alloc]initWithFrame:CGRectMake(20, self.view.bounds.size.height-65, 200, 30)]autorelease];
+    UILabel *Version = [[[UILabel alloc]initWithFrame:CGRectMake(20, HEIGHT-65, 200, 30)]autorelease];
     Version.text = [NSString stringWithFormat:@"当前版本：%@",[[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"]];
     Version.font = [UIFont boldSystemFontOfSize:14];
     Version.textColor = [UIColor grayColor];
@@ -109,6 +109,8 @@
 
 -(IBAction)signinbt{
     
+    
+    
     //1确定地址NSURL
     NSString *urlString = [NSString stringWithFormat:@"http://218.92.115.55/MobilePlatform/Login.aspx"];
     NSURL *url = [NSURL URLWithString:urlString];
@@ -159,7 +161,7 @@
                 
                 index.NavigationDelegate=_sideViewController;
                 leftViewController.LeftDelegate = index;
-                _sideViewController.leftViewShowWidth=self.view.bounds.size.width*4/5;
+                _sideViewController.leftViewShowWidth=WIDTH*4/5;
                 //index.setneedSwipeShowMenu=YES;//默认开启的可滑动展示
 
                 //动画效果可以被自己自定义，具体请看api

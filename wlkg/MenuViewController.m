@@ -118,7 +118,7 @@
         //发送者
         CGPoint i =imageRect.origin;
         CGSize j = imageRect.size;
-        CGRect nameRect = CGRectMake(i.x+j.width+10, i.y+13, self.view.bounds.size.width/1.5, 10);
+        CGRect nameRect = CGRectMake(i.x+j.width+10, i.y+13, WIDTH/1.5, 10);
         UILabel *nameLabel = [[UILabel alloc]initWithFrame:nameRect];
         nameLabel.font = [UIFont systemFontOfSize:16];
         nameLabel.tag = 1;

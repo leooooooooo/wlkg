@@ -26,6 +26,8 @@
 @property(retain,nonatomic) NSString *Update;
 @property(retain,nonatomic) NSString *Version;
 @property(retain,nonatomic) NSString *Url;
+@property(retain,nonatomic) NSDictionary *Authority;
+@property(retain,nonatomic) NSDictionary *FunctionMark;
 - (void)saveContext;
 - (NSURL *)applicationDocumentsDirectory;
 

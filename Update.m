@@ -94,7 +94,7 @@
                 alert = [[UIAlertView alloc]initWithTitle:@"更新" message:[NSString stringWithFormat:@"检测到新版本%@，请点击更新安装新版本",[Update objectForKey:@"Version"]] delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"更新", nil];
                 
                 //版本更新button
-                UIButton *newVersion = [[UIButton alloc]initWithFrame:CGRectMake(20, self.view.bounds.size.height-85, 200, 30)];
+                UIButton *newVersion = [[UIButton alloc]initWithFrame:CGRectMake(20, HEIGHT-85, 200, 30)];
                 [newVersion setTitle:[NSString stringWithFormat:@"最新版本：%@",[(AppDelegate *)[[UIApplication sharedApplication]delegate]Version]] forState:UIControlStateNormal];
                 newVersion.titleLabel.font = [UIFont boldSystemFontOfSize:14];
                 [newVersion setTitleColor:[UIColor redColor] forState:UIControlStateNormal];

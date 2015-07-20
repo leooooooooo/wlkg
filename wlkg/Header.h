@@ -13,8 +13,8 @@
 #define NavigationTitleColor [UIColor whiteColor]  //导航标题颜色
 #define NavigationBackArrowColor [UIColor whiteColor] //导航栏返回键头颜色
 #define AppName @"WLKG"
-#define WIDTH self.view.bounds.size.width
-#define HEIGHT self.view.bounds.size.height
+#define WIDTH [UIScreen mainScreen].bounds.size.width
+#define HEIGHT [UIScreen mainScreen].bounds.size.height
 #define PAGE1 @"首页"
 #define PAGE2 @"签到"
 #define PAGE3 @"我的应用"

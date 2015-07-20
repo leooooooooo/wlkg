@@ -10,5 +10,6 @@
 
 
 @interface IndexViewController : UIViewController<UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout,UIWebViewDelegate>
-
+@property(nonatomic,retain)NSMutableArray *List;
+@property(nonatomic,retain)UICollectionView *collectionView;
 @end

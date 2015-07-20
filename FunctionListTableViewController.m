@@ -23,15 +23,64 @@
 #import "GGSNDLRQKViewController.h"
 #import "BGCXViewController.h"
 #import "BJCXViewController.h"
+#import "NewsListTableViewController.h"
+#import "YWSJViewController.h"
+#import "SBTZViewController.h"
+#import "SBYXViewController.h"
+#import "ExcelListTableViewController.h"
+#import "KPSPTableViewController.h"
+#import "AppDelegate.h"
 
 @interface FunctionListTableViewController ()
-
+@property(nonatomic,strong)AppDelegate *delegate;
 @end
 
 @implementation FunctionListTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.delegate = [[UIApplication sharedApplication]delegate];
+
+    
+    //初始化二级菜单
+    
+    NSArray *name = [[NSArray alloc]initWithObjects:
+                     @"今日资金存量",//1
+                     @"收入成本月度情况",//2
+                     @"公司流动资产负债情况",//3
+                     @"利润月度情况",//4
+                     @"本年集装箱代理量趋势分析",//5
+                     @"本年散杂货代理量趋势分析",//6
+                     @"本年船舶代理量趋势分析",//7
+                     @"今日保税进出量",//8
+                     @"今日贸易情况",//9
+                     @"今日仓储进出量",//10
+                     @"今日发运业务情况",//11
+                     @"今日B保公司业务情况",//12
+                     @"各公司年度盈利情况",//13
+                     @"报关",//14
+                     @"报检",//15
+                     @"要闻咨询",//16
+                     @"领导讲话",//17
+                     @"基层动态",//18
+                     @"党建新闻",//19
+                     @"货运业务",//20
+                     @"船务业务",//21
+                     @"货运财务",//22
+                     @"船务财务",//23
+                     @"设备运行记录",//24
+                     @"设备台账记录",//25
+                     @"经营情况",//26
+                     @"开票审批",//27
+                     nil];
+    NSMutableArray *mark = [[NSMutableArray alloc]init];
+    for (int i = 0;i<name.count; i++) {
+        [mark addObject:[[NSDictionary alloc]initWithObjectsAndKeys:[NSString stringWithFormat:@"%d",i+1],@"mark",nil]];
+    }
+    
+    self.delegate.FunctionMark =[[NSDictionary alloc]initWithObjects:mark forKeys:name];
+
     // Do any additional setup after loading the view.
     UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
     [self.navigationItem setBackBarButtonItem:backButton];
@@ -41,7 +90,7 @@
     self.navigationController.navigationBar.titleTextAttributes=dict;
     
     self.view.backgroundColor =[UIColor whiteColor];
-
+    self.tableView.tableFooterView = [[UIView alloc] init];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -119,7 +168,7 @@
         //发送者
         CGPoint i =imageRect.origin;
         CGSize j = imageRect.size;
-        CGRect nameRect = CGRectMake(i.x+j.width+10, i.y+13, self.view.bounds.size.width/1.5, 10);
+        CGRect nameRect = CGRectMake(i.x+j.width+10, i.y+13, WIDTH/1.5, 10);
         UILabel *nameLabel = [[UILabel alloc]initWithFrame:nameRect];
         nameLabel.font = [UIFont systemFontOfSize:16];
         nameLabel.tag = 1;
@@ -128,24 +177,24 @@
         cell.accessoryType=UITableViewCellAccessoryDisclosureIndicator;
     }
 
-    NSDictionary *dic  = [self.List objectAtIndex:indexPath.row];
     //姓名
-    ((UILabel *)[cell.contentView viewWithTag:1]).text = [dic objectForKey:@"name"];
+    ((UILabel *)[cell.contentView viewWithTag:1]).text = [self.List objectAtIndex:indexPath.row];
     
     //图标
-    ((UIImageView *)[cell.contentView viewWithTag:2]).image = [UIImage imageNamed:[dic objectForKey:@"image"]];
+    ((UIImageView *)[cell.contentView viewWithTag:2]).image = [UIImage imageNamed:self.title];
     
-    //办公室
-    //((UILabel *)[cell.contentView viewWithTag:teaOfficeTag]).text = [dic objectForKey:@"office"];
     return cell;
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSDictionary *dic  = [self.List objectAtIndex:indexPath.row];
-    int mark = [[dic objectForKey:@"mark"] intValue];
-    NSString *name =[dic objectForKey:@"name"];
+    NSString *FunctionName =[self.List objectAtIndex:indexPath.row];
+    NSLog(FunctionName,nil);
+    int mark =[[[self.delegate.FunctionMark objectForKey:FunctionName]objectForKey:@"mark"]intValue];
+    
     UIViewController *vc = [[UIViewController alloc]init];
+
+    vc.view.backgroundColor = [UIColor whiteColor];
     switch (mark) {
         case 1:{
             vc = [[JRZJCLViewController alloc]init];
@@ -207,11 +256,75 @@
             vc = [[BJCXViewController alloc]init];
         };
             break;
+        case 16:{
+            NewsListTableViewController *news = [[NewsListTableViewController alloc]init];
+            news.mark = mark;
+            vc=news;
+        };
+            break;
+        case 17:{
+            NewsListTableViewController *news = [[NewsListTableViewController alloc]init];
+            news.mark = mark;
+            vc=news;        };
+            break;
+        case 18:{
+            NewsListTableViewController *news = [[NewsListTableViewController alloc]init];
+            news.mark = mark;
+            vc=news;
+        };
+            break;
+        case 19:{
+            NewsListTableViewController *news = [[NewsListTableViewController alloc]init];
+            news.mark = mark;
+            vc=news;
+        };
+            break;
+        case 20:{
+            YWSJViewController *ywsj = [[YWSJViewController alloc]init];
+            ywsj.mark = mark;
+            vc=ywsj;
+        };
+            break;
+        case 21:{
+            YWSJViewController *ywsj = [[YWSJViewController alloc]init];
+            ywsj.mark = mark;
+            vc=ywsj;
+        };
+            break;
+        case 22:{
+            YWSJViewController *ywsj = [[YWSJViewController alloc]init];
+            ywsj.mark = mark;
+            vc=ywsj;
+        };
+            break;
+        case 23:{
+            YWSJViewController *ywsj = [[YWSJViewController alloc]init];
+            ywsj.mark = mark;
+            vc=ywsj;
+        };
+            break;
+        case 24:{
+            vc = [[SBYXViewController alloc]init];
+        };
+            break;
+        case 25:{
+            vc = [[SBTZViewController alloc]init];
+        };
+            break;
+        case 26:{
+            ExcelListTableViewController *excel = [[ExcelListTableViewController alloc]init];
+            excel.mark = mark;
+            vc=excel;
+        };
+        case 27:{
+            vc = [[KPSPTableViewController alloc]init];
+        };
+            break;
         default:
             break;
             
     }
-    vc.title = name;
+    vc.title = FunctionName;
     [self.navigationController pushViewController:vc animated:YES];
 }
 

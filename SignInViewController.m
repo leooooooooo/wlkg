@@ -20,6 +20,8 @@
     // Do any additional setup after loading the view.
     self.view.backgroundColor  = NavigationBackArrowColor;
     self.title = PAGE2;
+    
+
 }
 
 - (void)didReceiveMemoryWarning {
