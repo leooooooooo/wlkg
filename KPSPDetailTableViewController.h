@@ -11,6 +11,8 @@
 @interface KPSPDetailTableViewController : UITableViewController
 @property (nonatomic,retain)NSString *ID;
 @property (retain, nonatomic) NSMutableArray *items;
+@property (retain,nonatomic)NSArray *List;
+@property int mark;
 
 @end
 

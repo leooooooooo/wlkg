@@ -65,10 +65,10 @@
     // Do any additional setup after loading the view.
     
     
-    IndexViewController *index  = [[IndexViewController alloc]init];
-    MyAppViewController *MyApp =[[MyAppViewController alloc]init];
-    SignInViewController *signin =[[SignInViewController alloc]init];
-    MessageViewController *message = [[MessageViewController alloc]init];
+    IndexViewController *index  = [[[IndexViewController alloc]init]autorelease];
+    MyAppViewController *MyApp =[[[MyAppViewController alloc]init]autorelease];
+    SignInViewController *signin =[[[SignInViewController alloc]init]autorelease];
+    MessageViewController *message = [[[MessageViewController alloc]init]autorelease];
     
     self.viewControllers = [NSArray arrayWithObjects:index,signin,MyApp,message, nil];
     
@@ -119,14 +119,14 @@
 -(void)ChangePassword
 {
     [self.NavigationDelegate hideSideViewController:true];
-    ChangePasswordViewController *vc =[[ChangePasswordViewController alloc]init];
+    ChangePasswordViewController *vc =[[[ChangePasswordViewController alloc]init]autorelease];
     [self.navigationController pushViewController:vc animated:YES];
 }
 
 -(void)ChangeInfo
 {
     [self.NavigationDelegate hideSideViewController:true];
-    ChangeInfoViewController *vc =[[ChangeInfoViewController alloc]init];
+    ChangeInfoViewController *vc =[[[ChangeInfoViewController alloc]init]autorelease];
     [self.navigationController pushViewController:vc animated:YES];
 }
 

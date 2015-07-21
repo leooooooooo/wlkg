@@ -34,6 +34,7 @@
     
     
     self.List = [[NSMutableArray alloc]init];
+    [self.tableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning {

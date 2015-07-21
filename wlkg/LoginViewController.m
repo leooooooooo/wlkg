@@ -36,7 +36,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.UpdateDelegate = [[Update alloc]init];
+    self.UpdateDelegate = [[[Update alloc]init]autorelease];
     [self.UpdateDelegate GetUpdateInfo:self.view];
     //当前版本
     UILabel *Version = [[[UILabel alloc]initWithFrame:CGRectMake(20, HEIGHT-65, 200, 30)]autorelease];

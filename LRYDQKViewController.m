@@ -134,7 +134,7 @@
         //Date
         CGRect DateRect = CGRectMake(20,11,50,22);
         CGPoint i = DateRect.origin;
-        CGSize j = DateRect.size;
+        //CGSize j = DateRect.size;
         UILabel *DateLabel = [[UILabel alloc]initWithFrame:DateRect];
         DateLabel.font = [UIFont systemFontOfSize:16];
         DateLabel.tag = 1;
@@ -147,7 +147,7 @@
         CGRect FundRect = CGRectMake(WIDTH/2-25, i.y, 70, 22);
         UILabel *FundLabel = [[UILabel alloc]initWithFrame:FundRect];
         i = FundRect.origin;
-        j = FundRect.size;
+        //j = FundRect.size;
         FundLabel.font = [UIFont systemFontOfSize:16];
         FundLabel.tag = 2;
         FundLabel.textAlignment= NSTextAlignmentCenter;
@@ -196,7 +196,7 @@
     //Date
     UILabel *Date = [[UILabel alloc] initWithFrame:CGRectMake(20, 15, 50, 20)];
     CGPoint i = Date.frame.origin;
-    CGSize  j = Date.frame.size;
+    //CGSize  j = Date.frame.size;
     Date.textColor=[UIColor whiteColor];
     Date.backgroundColor = [UIColor clearColor];
     Date.text=@"月份";
@@ -205,7 +205,7 @@
     //Fund
     UILabel *Fund = [[UILabel alloc]initWithFrame:CGRectMake(WIDTH/2-60, i.y, 120, 20)];
     i = Fund.frame.origin;
-    j = Fund.frame.size;
+    //j = Fund.frame.size;
     Fund.textColor=[UIColor whiteColor];
     Fund.backgroundColor = [UIColor clearColor];
     Fund.text=@"计划利润(万元)";
@@ -252,7 +252,10 @@
     NSInteger max = [[self.ChartProfit valueForKeyPath:@"@max.intValue"] integerValue];
     NSInteger min =[[self.ChartProfit valueForKeyPath:@"@min.intValue"] integerValue];
     
-    return max<0?CGRangeMake(max*0.8, min*1.2):CGRangeMake(max*1.2, min*0.8);
+    max = max>0?max*1.2:max*0.8;
+    min = min>0?min*0.8:min*1.2;
+    
+    return CGRangeMake(max, min);
 }
 
 #pragma mark 折线图专享功能

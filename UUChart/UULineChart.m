@@ -155,18 +155,18 @@
         //获取最大最小位置
         CGFloat max = [childAry[0] floatValue];
         CGFloat min = [childAry[0] floatValue];
-        NSInteger max_i = 0;
-        NSInteger min_i = 0;
+        //NSInteger max_i = 0;
+        //NSInteger min_i = 0;
         
         for (int j=0; j<childAry.count; j++){
             CGFloat num = [childAry[j] floatValue];
             if (max<=num){
                 max = num;
-                max_i = j;
+                //max_i = j;
             }
             if (min>=num){
                 min = num;
-                min_i = j;
+                //min_i = j;
             }
         }
         

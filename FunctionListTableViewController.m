@@ -316,6 +316,7 @@
             excel.mark = mark;
             vc=excel;
         };
+            break;
         case 27:{
             vc = [[KPSPTableViewController alloc]init];
         };

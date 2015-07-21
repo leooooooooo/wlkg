@@ -60,10 +60,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     static NSString *customXibCellIdentifier = @"CustomXibCellIdentifier";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:customXibCellIdentifier];
-
-        //使用默认的UITableViewCell,但是不使用默认的image与text，改为添加自定义的控件
-        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:customXibCellIdentifier];
+    UITableViewCell *cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:customXibCellIdentifier];
         
         //Date
         CGRect DateRect = CGRectMake(20,11,70,22);

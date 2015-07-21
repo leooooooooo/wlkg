@@ -20,7 +20,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"取消" style:UIBarButtonItemStylePlain target:nil action:nil];
+    UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
     [self.navigationItem setBackBarButtonItem:backButton];
     [self.navigationController.navigationBar setTintColor:NavigationBackArrowColor];
     [self.navigationController.navigationBar setBarTintColor:NavigationBarColor];
@@ -34,7 +34,7 @@
     KPSPDetailTableViewController *vc =[[KPSPDetailTableViewController alloc]init];
     //vc.ID = ojbID;
     vc.title = self.title;
-    [self.navigationController pushViewController:vc animated:YES];
+    //[self.navigationController pushViewController:vc animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -44,8 +44,7 @@
 
 -(NSMutableArray *)getArray
 {
-    NSString *URL = [[NSString alloc]init];
-    URL = [NSString stringWithFormat:@"http://218.92.115.55/wlkg/Service/Approval/BillingApproval/GetDelegationList.aspx?UserCode=%@",[(AppDelegate *)[[UIApplication sharedApplication]delegate]Code_User]];
+    NSString *URL = [NSString stringWithFormat:@"http://218.92.115.55/wlkg/Service/Approval/BillingApproval/GetDelegationList.aspx?UserCode=%@",[(AppDelegate *)[[UIApplication sharedApplication]delegate]Code_User]];
     NSError *error;
     //加载一个NSURL对象
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:URL]];
@@ -58,7 +57,7 @@
         [alert show];
         return nil;
     }
-    return [Json objectForKey:@"ReportFileList"];
+    return [Json objectForKey:@"DelegationList"];
     
 }
 
@@ -85,11 +84,8 @@
     //使用默认的UITableViewCell,但是不使用默认的image与text，改为添加自定义的控件
     UITableViewCell *cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:customXibCellIdentifier];
     
-    NSString *label1 =[[NSString alloc]init];
-    NSString *label2 =[[NSString alloc]init];
-    
-    label1 = [NSString stringWithFormat:@"船名：%@\n航次：%@\n提单：%@\n货名：%@",[[self.List objectAtIndex:indexPath.row]objectAtIndex:1],[[self.List objectAtIndex:indexPath.row]objectAtIndex:2],[[self.List objectAtIndex:indexPath.row]objectAtIndex:3],[[self.List objectAtIndex:indexPath.row]objectAtIndex:4]];
-    label2 = [NSString stringWithFormat:@"提单数：%@\n货主：%@\n放货信息：%@\n备注：%@",[[self.List objectAtIndex:indexPath.row]objectAtIndex:5],[[self.List objectAtIndex:indexPath.row]objectAtIndex:6],[[self.List objectAtIndex:indexPath.row]objectAtIndex:7],[[self.List objectAtIndex:indexPath.row]objectAtIndex:8]];
+    NSString *label1 = [NSString stringWithFormat:@"船名：%@\n航次：%@\n提单：%@\n货名：%@",[[self.List objectAtIndex:indexPath.row]objectAtIndex:1],[[self.List objectAtIndex:indexPath.row]objectAtIndex:2],[[self.List objectAtIndex:indexPath.row]objectAtIndex:3],[[self.List objectAtIndex:indexPath.row]objectAtIndex:4]];
+    NSString *label2 = [NSString stringWithFormat:@"提单数：%@\n货主：%@\n放货信息：%@\n备注：%@",[[self.List objectAtIndex:indexPath.row]objectAtIndex:5],[[self.List objectAtIndex:indexPath.row]objectAtIndex:6],[[self.List objectAtIndex:indexPath.row]objectAtIndex:7],[[self.List objectAtIndex:indexPath.row]objectAtIndex:8]];
     
     //Date
     CGRect DateRect = CGRectMake(20,5,WIDTH/2,90);
@@ -121,7 +117,7 @@
     
     KPSPDetailTableViewController *vc =[[KPSPDetailTableViewController alloc]init];
     vc.ID = ojbID;
-    vc.title = self.title;
+    //vc.title = self.title;
     [self.navigationController pushViewController:vc animated:YES];
 }
 

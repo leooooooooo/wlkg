@@ -117,7 +117,7 @@
         //Date
         CGRect DateRect = CGRectMake(20,11,120,22);
         CGPoint i = DateRect.origin;
-        CGSize j = DateRect.size;
+        //CGSize j = DateRect.size;
         UILabel *DateLabel = [[UILabel alloc]initWithFrame:DateRect];
         DateLabel.font = [UIFont systemFontOfSize:16];
         DateLabel.tag = 1;
@@ -129,8 +129,8 @@
         //Fund
         CGRect FundRect = CGRectMake(WIDTH-220, i.y, 200, 22);
         UILabel *FundLabel = [[UILabel alloc]initWithFrame:FundRect];
-        i = FundRect.origin;
-        j = FundRect.size;
+        //i = FundRect.origin;
+        //j = FundRect.size;
         FundLabel.font = [UIFont systemFontOfSize:16];
         FundLabel.tag = 2;
         FundLabel.textAlignment= NSTextAlignmentRight;

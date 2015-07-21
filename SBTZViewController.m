@@ -105,7 +105,7 @@
     //Date
     CGRect DateRect = CGRectMake(0,11,150,22);
     CGPoint i = DateRect.origin;
-    CGSize j = DateRect.size;
+    //CGSize j = DateRect.size;
     UILabel *DateLabel = [[UILabel alloc]initWithFrame:DateRect];
     DateLabel.font = [UIFont systemFontOfSize:16];
     DateLabel.tag = 1;
@@ -118,7 +118,7 @@
     CGRect FundRect = CGRectMake(WIDTH/3, i.y, 150, 22);
     UILabel *FundLabel = [[UILabel alloc]initWithFrame:FundRect];
     i = FundRect.origin;
-    j = FundRect.size;
+    //j = FundRect.size;
     FundLabel.font = [UIFont systemFontOfSize:16];
     FundLabel.tag = 2;
     FundLabel.textAlignment= NSTextAlignmentCenter;
@@ -162,7 +162,7 @@
     //Date
     UILabel *Date = [[UILabel alloc] initWithFrame:CGRectMake(0, 15, 150, 20)];
     CGPoint i = Date.frame.origin;
-    CGSize  j = Date.frame.size;
+    //CGSize  j = Date.frame.size;
     Date.textColor=[UIColor whiteColor];
     Date.backgroundColor = [UIColor clearColor];
     Date.text=@"设备号";
@@ -171,7 +171,7 @@
     //Fund
     UILabel *Fund = [[UILabel alloc]initWithFrame:CGRectMake(WIDTH/3, i.y, 150, 20)];
     i = Fund.frame.origin;
-    j = Fund.frame.size;
+    //j = Fund.frame.size;
     Fund.textColor=[UIColor whiteColor];
     Fund.backgroundColor = [UIColor clearColor];
     Fund.text=@"设备类型";
@@ -211,7 +211,9 @@
         [alert show];
         return nil;
     }
+
     return [Json objectForKey:@"EquipmentRecord"];
+    
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -242,9 +244,11 @@
 }
 
 - (void)select{
-    
-    self.List = [self getArray:loadCount];
-    [self.tableView reloadData];
+
+    //self.List = [self getArray:loadCount];
+    [self.refreshControll startPullDownRefreshing];
+
+    //[self.tableView reloadData];
     [SVProgressHUD dismiss];
     
 }
@@ -409,7 +413,6 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    [self.refreshControll startPullDownRefreshing];
 }
 
 

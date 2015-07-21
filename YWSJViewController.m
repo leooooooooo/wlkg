@@ -40,6 +40,8 @@
     
     select.tintColor = [UIColor whiteColor];
     [self.navigationItem setRightBarButtonItem:select];
+    
+    
     //分割线
     UILabel *fenge = [[UILabel alloc]initWithFrame:CGRectMake(0, 110, WIDTH*2, 2)];
     fenge.backgroundColor = [UIColor redColor];
@@ -50,7 +52,7 @@
     //
     [tableView setFrame:CGRectMake(0, 48, WIDTH, HEIGHT-48)];
     //tableView.sectionHeaderHeight = 44;
-    tableView.backgroundColor = UUCleanGrey;
+    //tableView.backgroundColor = UUCleanGrey;
     tableView.tableFooterView = [[UIView alloc]init];
 }
 
@@ -345,6 +347,8 @@
     if ([earlyDate isEqualToDate:endDate] && ![earlyDate isEqualToDate:beginDate]) {
         
         [self alterMessage:@"开始时间不得晚于结束时间"];
+        [SVProgressHUD dismiss];
+
         return;
         
     }

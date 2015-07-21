@@ -118,7 +118,7 @@
         //Date
         CGRect DateRect = CGRectMake(20,11,50,22);
         CGPoint i = DateRect.origin;
-        CGSize j = DateRect.size;
+        //CGSize j = DateRect.size;
         UILabel *DateLabel = [[UILabel alloc]initWithFrame:DateRect];
         DateLabel.font = [UIFont systemFontOfSize:16];
         DateLabel.tag = 1;
@@ -131,7 +131,7 @@
         CGRect FundRect = CGRectMake(WIDTH/2-25, i.y, 50, 22);
         UILabel *FundLabel = [[UILabel alloc]initWithFrame:FundRect];
         i = FundRect.origin;
-        j = FundRect.size;
+        //j = FundRect.size;
         FundLabel.font = [UIFont systemFontOfSize:16];
         FundLabel.tag = 2;
         FundLabel.textAlignment= NSTextAlignmentCenter;
@@ -182,7 +182,7 @@
     //Date
     UILabel *Date = [[UILabel alloc] initWithFrame:CGRectMake(20, 15, 50, 20)];
     CGPoint i = Date.frame.origin;
-    CGSize  j = Date.frame.size;
+    //CGSize  j = Date.frame.size;
     Date.textColor=[UIColor whiteColor];
     Date.backgroundColor = [UIColor clearColor];
     Date.text=@"月份";
@@ -191,7 +191,7 @@
     //Fund
     UILabel *Fund = [[UILabel alloc]initWithFrame:CGRectMake(WIDTH/2-60, i.y, 120, 20)];
     i = Fund.frame.origin;
-    j = Fund.frame.size;
+    //j = Fund.frame.size;
     Fund.textColor=[UIColor whiteColor];
     Fund.backgroundColor = [UIColor clearColor];
     Fund.text=@"代理量(艘次)";

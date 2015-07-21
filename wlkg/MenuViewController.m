@@ -38,9 +38,9 @@
     [self.view addSubview:welcome];
 
     UITableView *tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, HEIGHT/4, WIDTH, HEIGHT*3/4)];
-    NSDictionary *dic1 = [[NSDictionary alloc]initWithObjectsAndKeys:@"个人信息",@"name",@"22_05",@"image",@"1",@"mark",nil];
+    //NSDictionary *dic1 = [[NSDictionary alloc]initWithObjectsAndKeys:@"个人信息",@"name",@"22_05",@"image",@"1",@"mark",nil];
     NSDictionary *dic2 = [[NSDictionary alloc]initWithObjectsAndKeys:@"修改密码",@"name",@"22_08",@"image",@"2",@"mark",nil];
-    NSDictionary *dic3 = [[NSDictionary alloc]initWithObjectsAndKeys:@"设备绑定",@"name",@"22_10",@"image",@"3",@"mark",nil];
+    //NSDictionary *dic3 = [[NSDictionary alloc]initWithObjectsAndKeys:@"设备绑定",@"name",@"22_10",@"image",@"3",@"mark",nil];
     NSDictionary *dic4 = [[NSDictionary alloc]initWithObjectsAndKeys:@"检查更新",@"name",@"22_12",@"image",@"4",@"mark",nil];
     NSDictionary *dic5 = [[NSDictionary alloc]initWithObjectsAndKeys:@"登出",@"name",@"22_14",@"image",@"5",@"mark",nil];
 
