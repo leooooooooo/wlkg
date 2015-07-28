@@ -33,7 +33,7 @@
     
     self.tableView.rowHeight = 120;
     self.tableView.allowsSelectionDuringEditing = YES;
-    
+    self.tableView.tableFooterView = [[UIView alloc]init];
     self.isAuditing = NO;
     self.isRejecting = NO;
     
@@ -42,15 +42,7 @@
 
 
     [self getArray];
-    /*
-    NSArray *qwe =[[NSArray alloc]initWithObjects:@"1",@"2", nil];
-    NSArray *asd =[[NSArray alloc]initWithObjects:@"3",@"4", nil];
-    
-    self.List = [[NSArray alloc]initWithObjects:qwe, nil];
-    */
-    
 
-    // Do any additional setup after loading the view.
 }
 
 
@@ -172,7 +164,11 @@
             NSLog(@"%@",TFNO);
         }
     }
-    
+    if (TFNO.length==0) {
+        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"请至少选定一条数据" message:nil delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        [alert show];
+        return;
+    }
     NSString *URL = [[NSString alloc]init];
     if(self.isAuditing)
     {

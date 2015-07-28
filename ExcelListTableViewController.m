@@ -16,6 +16,7 @@
     int Max_Count;
 }
 @property (nonatomic,strong)CLLRefreshHeadController *refreshControll;
+@property (nonatomic,strong)NSString *FilePath;
 @end
 
 @implementation ExcelListTableViewController
@@ -137,6 +138,8 @@
     
 }
 
+
+
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSArray *info = [self.List objectAtIndex:indexPath.row];
@@ -144,31 +147,24 @@
     NSString *urlString =[info objectAtIndex:2];
     NSString *name =[info objectAtIndex:1];
     
-    /*
      //下载文件
-    NSString *FilePath=[[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:name];
-    NSLog(FilePath,nil);
+    
+    NSString *doc = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+    self.FilePath = [doc stringByAppendingPathComponent:name];
+    
+    NSLog(self.FilePath,nil);
     NSFileManager *fileManager = [NSFileManager defaultManager];
     // Copy the database sql file from the resourcepath to the documentpath
-    if (![fileManager fileExistsAtPath:FilePath])
+    if (![fileManager fileExistsAtPath:self.FilePath])
     {
         NSURL * url=[[NSURL alloc] initWithString:[urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
         NSData *data = [NSData dataWithContentsOfURL:url];
-        [data writeToFile:FilePath atomically:YES];//将NSData类型对象data写入文件，文件名为FileName
+        [data writeToFile:self.FilePath atomically:YES];//将NSData类型对象data写入文件，文件名为FileName
     }
+    NSURL *URL = [NSURL fileURLWithPath:self.FilePath];
     
-     //外部程序打开
-    UIDocumentInteractionController *documentController = [UIDocumentInteractionController interactionControllerWithURL:[NSURL fileURLWithPath:FilePath]];
-    documentController.delegate = self;
-    documentController.UTI = @"com.microsoft.excel.xls";
-    documentController.UTI = @"com.lyg.yghy";
-
-    [documentController presentOpenInMenuFromRect:CGRectMake(0, 20, 100, 100) inView:self.view animated:YES];
-
-    //NSURL *URL = [NSURL fileURLWithPath:FilePath];
-    */
     
-    NSURL * URL=[[NSURL alloc] initWithString:[urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+    //NSURL * URL=[[NSURL alloc] initWithString:[urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
 
     UIViewController *vc = [[UIViewController alloc]init];
     
@@ -178,9 +174,27 @@
     
     [vc.view addSubview:webView];
     
+    //查询按钮
+    UIBarButtonItem *select = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(openInOtherApp)];
+    vc.navigationItem.rightBarButtonItem = select;
+    
     vc.title = name;
     [self.navigationController pushViewController:vc animated:YES];
  
+}
+
+-(void)openInOtherApp
+{
+    NSLog(self.FilePath,nil);
+    
+     //外部程序打开
+     UIDocumentInteractionController *documentController = [UIDocumentInteractionController interactionControllerWithURL:[NSURL fileURLWithPath:self.FilePath]];
+     documentController.delegate = self;
+     documentController.UTI = @"com.microsoft.excel.xls";
+    
+     [documentController presentOpenInMenuFromRect:CGRectMake(760, 20, 100, 100) inView:self.view animated:YES];
+    
+
 }
 
 

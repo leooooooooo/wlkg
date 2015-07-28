@@ -151,7 +151,7 @@
     UIView* myView = [[UIView alloc] init];
     myView.backgroundColor = [UIColor colorWithRed:0.10 green:0.68 blue:0.94 alpha:0.95];
     //Date
-    NSArray *name = [[NSArray alloc]initWithObjects:@"路桥非落地",@"路桥落地",@"郁港非落地",@"郁港落地", nil];
+    NSArray *name = [[NSArray alloc]initWithObjects:@"陆桥非落地",@"陆桥落地",@"郁港非落地",@"郁港落地", nil];
     UILabel *Date = [[UILabel alloc] initWithFrame:CGRectMake(20, 15, 150, 20)];
     Date.textColor=[UIColor whiteColor];
     Date.backgroundColor = [UIColor clearColor];

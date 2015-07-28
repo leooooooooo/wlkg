@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "CLLRefreshHeadController.h"
 
-@interface ExcelListTableViewController : UITableViewController<UITableViewDelegate,UITableViewDataSource,CLLRefreshHeadControllerDelegate>
+@interface ExcelListTableViewController : UITableViewController<UITableViewDelegate,UITableViewDataSource,CLLRefreshHeadControllerDelegate,UIDocumentInteractionControllerDelegate>
 @property (retain,nonatomic) NSMutableArray *List;
 @property int mark;
 

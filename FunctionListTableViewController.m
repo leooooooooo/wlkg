@@ -30,6 +30,7 @@
 #import "ExcelListTableViewController.h"
 #import "KPSPTableViewController.h"
 #import "AppDelegate.h"
+#import "ContactsViewController.m"
 
 @interface FunctionListTableViewController ()
 @property(nonatomic,strong)AppDelegate *delegate;
@@ -73,6 +74,8 @@
                      @"设备台账记录",//25
                      @"经营情况",//26
                      @"开票审批",//27
+                     @"员工通讯录",//28
+                     @"企业通讯录",//29
                      nil];
     NSMutableArray *mark = [[NSMutableArray alloc]init];
     for (int i = 0;i<name.count; i++) {
@@ -319,6 +322,10 @@
             break;
         case 27:{
             vc = [[KPSPTableViewController alloc]init];
+        };
+            break;
+        case 28:{
+            vc = [[ContactsViewController alloc]init];
         };
             break;
         default:
