@@ -82,6 +82,12 @@
 		B363E6131B3144B200398EBA /* ChangePasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B363E6121B3144B200398EBA /* ChangePasswordViewController.m */; };
 		B363E6161B3144D400398EBA /* ChangeInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B363E6151B3144D400398EBA /* ChangeInfoViewController.m */; };
 		B363E6191B315CF600398EBA /* GGSNDLRQKViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B363E6181B315CF600398EBA /* GGSNDLRQKViewController.m */; };
+		B36DC0FA1B6715B600402EC5 /* Contacts.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B36DC0F41B6715B600402EC5 /* Contacts.xcdatamodeld */; };
+		B36DC0FB1B6715B600402EC5 /* ContactsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B36DC0F71B6715B600402EC5 /* ContactsManager.m */; };
+		B36DC0FF1B6715CF00402EC5 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = B36DC0FE1B6715CF00402EC5 /* Person.m */; };
+		B36DC1021B67280700402EC5 /* ContactsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B36DC1011B67280700402EC5 /* ContactsTableViewController.m */; };
+		B36DC1111B67424400402EC5 /* ContactDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B36DC1101B67424400402EC5 /* ContactDetailViewController.m */; };
+		B36DC1141B6748D900402EC5 /* Header.m in Sources */ = {isa = PBXBuildFile; fileRef = B36DC1131B6748D900402EC5 /* Header.m */; };
 		B37248771B4D0B7200A4CE6D /* NewsListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B37248761B4D0B7200A4CE6D /* NewsListTableViewController.m */; };
 		B37248951B4D19EA00A4CE6D /* CLLRefreshCircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = B372488D1B4D19EA00A4CE6D /* CLLRefreshCircleView.m */; };
 		B37248961B4D19EA00A4CE6D /* CLLRefreshFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = B372488F1B4D19EA00A4CE6D /* CLLRefreshFooterView.m */; };
@@ -195,7 +201,6 @@
 		B31CB39E1B281A07003D4354 /* JRZJCLViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JRZJCLViewController.h; sourceTree = "<group>"; };
 		B31CB39F1B281A07003D4354 /* JRZJCLViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JRZJCLViewController.m; sourceTree = "<group>"; };
 		B32ABB591AF9AB680030DD3C /* IndexViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IndexViewController.h; path = wlkg/IndexViewController.h; sourceTree = "<group>"; };
-		B32ABB5E1AF9AC1B0030DD3C /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
 		B32ABB6E1AF9AFBF0030DD3C /* contacts_collect@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "contacts_collect@2x.png"; sourceTree = "<group>"; };
 		B32ABB6F1AF9AFBF0030DD3C /* contacts_major@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "contacts_major@2x.png"; sourceTree = "<group>"; };
 		B32ABB701AF9AFBF0030DD3C /* head1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = head1.jpg; sourceTree = "<group>"; };
@@ -225,6 +230,20 @@
 		B363E6151B3144D400398EBA /* ChangeInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangeInfoViewController.m; sourceTree = "<group>"; };
 		B363E6171B315CF600398EBA /* GGSNDLRQKViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GGSNDLRQKViewController.h; sourceTree = "<group>"; };
 		B363E6181B315CF600398EBA /* GGSNDLRQKViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GGSNDLRQKViewController.m; sourceTree = "<group>"; };
+		B36DC0F51B6715B600402EC5 /* Contacts.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Contacts.xcdatamodel; sourceTree = "<group>"; };
+		B36DC0F61B6715B600402EC5 /* ContactsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactsManager.h; sourceTree = "<group>"; };
+		B36DC0F71B6715B600402EC5 /* ContactsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactsManager.m; sourceTree = "<group>"; };
+		B36DC0F81B6715B600402EC5 /* ContactsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactsViewController.h; sourceTree = "<group>"; };
+		B36DC0F91B6715B600402EC5 /* ContactsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactsViewController.m; sourceTree = "<group>"; };
+		B36DC0FD1B6715CF00402EC5 /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
+		B36DC0FE1B6715CF00402EC5 /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
+		B36DC1001B67280700402EC5 /* ContactsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactsTableViewController.h; sourceTree = "<group>"; };
+		B36DC1011B67280700402EC5 /* ContactsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactsTableViewController.m; sourceTree = "<group>"; };
+		B36DC10F1B67424400402EC5 /* ContactDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactDetailViewController.h; sourceTree = "<group>"; };
+		B36DC1101B67424400402EC5 /* ContactDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactDetailViewController.m; sourceTree = "<group>"; };
+		B36DC1121B6748D900402EC5 /* Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
+		B36DC1131B6748D900402EC5 /* Header.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Header.m; sourceTree = "<group>"; };
+		B36DC1B51B7067D700402EC5 /* wlkg copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "wlkg copy-Info.plist"; path = "/Users/Leo/Documents/wlkg/wlkg copy-Info.plist"; sourceTree = "<absolute>"; };
 		B37248751B4D0B7200A4CE6D /* NewsListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsListTableViewController.h; sourceTree = "<group>"; };
 		B37248761B4D0B7200A4CE6D /* NewsListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsListTableViewController.m; sourceTree = "<group>"; };
 		B372488C1B4D19EA00A4CE6D /* CLLRefreshCircleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLLRefreshCircleView.h; sourceTree = "<group>"; };
@@ -312,6 +331,7 @@
 				18B840C91A198822004C3FC7 /* wlkg */,
 				18B840E61A198823004C3FC7 /* wlkgTests */,
 				18B840C81A198822004C3FC7 /* Products */,
+				B36DC1B51B7067D700402EC5 /* wlkg copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -326,7 +346,6 @@
 		18B840C91A198822004C3FC7 /* wlkg */ = {
 			isa = PBXGroup;
 			children = (
-				B32ABB5E1AF9AC1B0030DD3C /* Header.h */,
 				18B840CE1A198822004C3FC7 /* AppDelegate.h */,
 				18B840CF1A198822004C3FC7 /* AppDelegate.m */,
 				18B840D41A198822004C3FC7 /* LoginViewController.h */,
@@ -337,6 +356,8 @@
 				18B840D11A198822004C3FC7 /* wlkg.xcdatamodeld */,
 				18B840CA1A198822004C3FC7 /* Supporting Files */,
 				B32ABB6D1AF9AFBF0030DD3C /* image */,
+				B36DC1121B6748D900402EC5 /* Header.h */,
+				B36DC1131B6748D900402EC5 /* Header.m */,
 			);
 			path = wlkg;
 			sourceTree = "<group>";
@@ -437,6 +458,7 @@
 		B31CB39A1B267EF0003D4354 /* Function */ = {
 			isa = PBXGroup;
 			children = (
+				B36DC0F31B67159C00402EC5 /* Contacts */,
 				B31CB39B1B267F3F003D4354 /* FunctionListTableViewController.h */,
 				B31CB39C1B267F3F003D4354 /* FunctionListTableViewController.m */,
 				B363E6091B31413400398EBA /* Detail */,
@@ -542,6 +564,24 @@
 				B363E6151B3144D400398EBA /* ChangeInfoViewController.m */,
 			);
 			name = SystemFunction;
+			sourceTree = "<group>";
+		};
+		B36DC0F31B67159C00402EC5 /* Contacts */ = {
+			isa = PBXGroup;
+			children = (
+				B36DC0FD1B6715CF00402EC5 /* Person.h */,
+				B36DC0FE1B6715CF00402EC5 /* Person.m */,
+				B36DC0F41B6715B600402EC5 /* Contacts.xcdatamodeld */,
+				B36DC0F61B6715B600402EC5 /* ContactsManager.h */,
+				B36DC0F71B6715B600402EC5 /* ContactsManager.m */,
+				B36DC0F81B6715B600402EC5 /* ContactsViewController.h */,
+				B36DC0F91B6715B600402EC5 /* ContactsViewController.m */,
+				B36DC1001B67280700402EC5 /* ContactsTableViewController.h */,
+				B36DC1011B67280700402EC5 /* ContactsTableViewController.m */,
+				B36DC10F1B67424400402EC5 /* ContactDetailViewController.h */,
+				B36DC1101B67424400402EC5 /* ContactDetailViewController.m */,
+			);
+			name = Contacts;
 			sourceTree = "<group>";
 		};
 		B372488B1B4D19EA00A4CE6D /* RefreshHeadView */ = {
@@ -773,11 +813,14 @@
 				B31C995C1B2FB5EA00E4CC4F /* BNCBDLLQSFXViewController.m in Sources */,
 				B37248AD1B535C8300A4CE6D /* YWSJViewController.m in Sources */,
 				B3A58B8E1B3A52B400B393D9 /* SignInViewController.m in Sources */,
+				B36DC0FB1B6715B600402EC5 /* ContactsManager.m in Sources */,
 				B31CB3941B267E73003D4354 /* UUBar.m in Sources */,
 				B3A58B911B3A52BE00B393D9 /* MessageViewController.m in Sources */,
 				B3A58B801B3A46F700B393D9 /* MainTabBarViewController.m in Sources */,
 				B31C99591B2FB5DE00E4CC4F /* BNSZHDLLQSFXViewController.m in Sources */,
 				18B840D01A198822004C3FC7 /* AppDelegate.m in Sources */,
+				B36DC1021B67280700402EC5 /* ContactsTableViewController.m in Sources */,
+				B36DC0FF1B6715CF00402EC5 /* Person.m in Sources */,
 				B363E6081B312BCB00398EBA /* JRBBGSYWQKViewController.m in Sources */,
 				B37248B41B538C2D00A4CE6D /* DetailTableViewController.m in Sources */,
 				B31CB3961B267E73003D4354 /* UUChart.m in Sources */,
@@ -794,6 +837,7 @@
 				B31CB3981B267E73003D4354 /* UUColor.m in Sources */,
 				B3732CF81B118B97001D1EFA /* IndexViewController.m in Sources */,
 				B363E6131B3144B200398EBA /* ChangePasswordViewController.m in Sources */,
+				B36DC1111B67424400402EC5 /* ContactDetailViewController.m in Sources */,
 				B3E1A3531B577AF6009AA50A /* SBTZViewController.m in Sources */,
 				B31C99561B2FB5C700E4CC4F /* BNJZXDLLQSFXViewController.m in Sources */,
 				B3E1A3501B5768BD009AA50A /* DropDownListView.m in Sources */,
@@ -803,12 +847,14 @@
 				B3732CD81B099EDA001D1EFA /* YRSideViewController.m in Sources */,
 				1843A1B41A81C08300A0C5A4 /* KeychainItemWrapper.m in Sources */,
 				B37248961B4D19EA00A4CE6D /* CLLRefreshFooterView.m in Sources */,
+				B36DC0FA1B6715B600402EC5 /* Contacts.xcdatamodeld in Sources */,
 				B38DD8001B32706D00FB0D3F /* BGCXViewController.m in Sources */,
 				B363E5F81B2FF83B00398EBA /* Update.m in Sources */,
 				B31CB3991B267E73003D4354 /* UULineChart.m in Sources */,
 				18B840CD1A198822004C3FC7 /* main.m in Sources */,
 				B31849C41B59F1D200A417B3 /* ExcelListTableViewController.m in Sources */,
 				B31CB3A01B281A07003D4354 /* JRZJCLViewController.m in Sources */,
+				B36DC1141B6748D900402EC5 /* Header.m in Sources */,
 				B3E1A3471B57659B009AA50A /* SBYXViewController.m in Sources */,
 				B31C994D1B2EA50600E4CC4F /* SRCBViewController.m in Sources */,
 				B363E6191B315CF600398EBA /* GGSNDLRQKViewController.m in Sources */,
@@ -919,12 +965,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Lianyungang Port Group Communications and Information Engineering Company";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Lianyungang Port Group Communications and Information Engineering Company";
 				INFOPLIST_FILE = wlkg/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "掌上物流";
 				PROVISIONING_PROFILE = "7286569f-8631-4ab7-8a90-3f8c6259ed09";
@@ -938,12 +985,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Lianyungang Port Group Communications and Information Engineering Company";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Lianyungang Port Group Communications and Information Engineering Company";
 				INFOPLIST_FILE = wlkg/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "掌上物流";
@@ -984,6 +1032,16 @@
 			);
 			currentVersion = 18B840D21A198822004C3FC7 /* wlkg.xcdatamodel */;
 			path = wlkg.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+		B36DC0F41B6715B600402EC5 /* Contacts.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				B36DC0F51B6715B600402EC5 /* Contacts.xcdatamodel */,
+			);
+			currentVersion = B36DC0F51B6715B600402EC5 /* Contacts.xcdatamodel */;
+			path = Contacts.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

@@ -142,7 +142,7 @@ See the header file Security/SecItem.h for more details.
 	OSStatus junk = noErr;
     if (!keychainItemData) 
     {
-        self.keychainItemData = [[NSMutableDictionary alloc] init];
+        self.keychainItemData = [[[NSMutableDictionary alloc] init]autorelease];
     }
     else if (keychainItemData)
     {

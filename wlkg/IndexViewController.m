@@ -56,8 +56,8 @@ static NSString *kcellIdentifier = @"collectionCellID";
 - (void)select{
     
     self.delegate.Authority = [self getAuthority];
-    if ([[self.delegate.Authority objectForKey:@"IsGet"]isEqualToString:@"No"]) {
-        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:[self.delegate.Authority objectForKey:@"Message"] message:nil delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+    if ([[[self.delegate.Authority objectForKey:@"IsGet"]objectAtIndex:0]isEqualToString:@"No"]) {
+        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:[[self.delegate.Authority objectForKey:@"Message"]objectAtIndex:0] message:nil delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
         [alert show];
     }
     else{

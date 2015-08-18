@@ -1,13 +1,15 @@
 //
-//  Header.h
-//  iLygport
+//  Header1.h
+//  wlkg
 //
-//  Created by leo on 15/1/5.
+//  Created by zhangchao on 15/7/28.
 //  Copyright (c) 2015年 leo. All rights reserved.
 //
 
-#ifndef iLygport_Header_h
-#define iLygport_Header_h
+#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+
+
 #define Bundle @"29TSL4289R.com.lyg.wlkg"  //应用ID
 #define NavigationBarColor [UIColor orangeColor]  //导航栏颜色
 #define NavigationTitleColor [UIColor whiteColor]  //导航标题颜色
@@ -19,4 +21,8 @@
 #define PAGE2 @"签到"
 #define PAGE3 @"我的应用"
 #define PAGE4 @"最新消息"
-#endif
+
+@interface Header : NSObject
++(void)NavigationConifigInitialize:(UIViewController *)sender;  //初始化导航
++(NSArray *)FunctionListInitialize;
+@end

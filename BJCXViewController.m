@@ -19,12 +19,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
-    [self.navigationItem setBackBarButtonItem:backButton];
-    [self.navigationController.navigationBar setTintColor:NavigationBackArrowColor];
-    [self.navigationController.navigationBar setBarTintColor:NavigationBarColor];
-    NSDictionary *dict = [NSDictionary dictionaryWithObject:NavigationTitleColor forKey:NSForegroundColorAttributeName];
-    self.navigationController.navigationBar.titleTextAttributes=dict;
+    [Header NavigationConifigInitialize:self];
+
     self.view.backgroundColor =[UIColor whiteColor];
     //输入名称
     UILabel *shenhelabel = [[UILabel alloc]initWithFrame:CGRectMake(0,60, self.view.frame.size.width, 40)];

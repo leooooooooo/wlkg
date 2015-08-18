@@ -21,12 +21,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
-    [self.navigationItem setBackBarButtonItem:backButton];
-    [self.navigationController.navigationBar setTintColor:NavigationBackArrowColor];
-    [self.navigationController.navigationBar setBarTintColor:NavigationBarColor];
-    NSDictionary *dict = [NSDictionary dictionaryWithObject:NavigationTitleColor forKey:NSForegroundColorAttributeName];
-    self.navigationController.navigationBar.titleTextAttributes=dict;
+    [Header NavigationConifigInitialize:self];
     self.view.backgroundColor =[UIColor whiteColor];
     self.title=@"修改密码";
     

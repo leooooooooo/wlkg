@@ -33,7 +33,6 @@
 #import "ContactsViewController.m"
 
 @interface FunctionListTableViewController ()
-@property(nonatomic,strong)AppDelegate *delegate;
 @end
 
 @implementation FunctionListTableViewController
@@ -41,56 +40,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.delegate = [[UIApplication sharedApplication]delegate];
+    //self.delegate = [[UIApplication sharedApplication]delegate];
 
     
     //初始化二级菜单
     
-    NSArray *name = [[NSArray alloc]initWithObjects:
-                     @"今日资金存量",//1
-                     @"收入成本月度情况",//2
-                     @"公司流动资产负债情况",//3
-                     @"利润月度情况",//4
-                     @"本年集装箱代理量趋势分析",//5
-                     @"本年散杂货代理量趋势分析",//6
-                     @"本年船舶代理量趋势分析",//7
-                     @"今日保税进出量",//8
-                     @"今日贸易情况",//9
-                     @"今日仓储进出量",//10
-                     @"今日发运业务情况",//11
-                     @"今日B保公司业务情况",//12
-                     @"各公司年度盈利情况",//13
-                     @"报关",//14
-                     @"报检",//15
-                     @"要闻咨询",//16
-                     @"领导讲话",//17
-                     @"基层动态",//18
-                     @"党建新闻",//19
-                     @"货运业务",//20
-                     @"船务业务",//21
-                     @"货运财务",//22
-                     @"船务财务",//23
-                     @"设备运行记录",//24
-                     @"设备台账记录",//25
-                     @"经营情况",//26
-                     @"开票审批",//27
-                     @"员工通讯录",//28
-                     @"企业通讯录",//29
-                     nil];
-    NSMutableArray *mark = [[NSMutableArray alloc]init];
-    for (int i = 0;i<name.count; i++) {
-        [mark addObject:[[NSDictionary alloc]initWithObjectsAndKeys:[NSString stringWithFormat:@"%d",i+1],@"mark",nil]];
-    }
-    
-    self.delegate.FunctionMark =[[NSDictionary alloc]initWithObjects:mark forKeys:name];
-
+    //self.delegate.FunctionList =
     // Do any additional setup after loading the view.
-    UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
-    [self.navigationItem setBackBarButtonItem:backButton];
-    [self.navigationController.navigationBar setTintColor:NavigationBackArrowColor];
-    [self.navigationController.navigationBar setBarTintColor:NavigationBarColor];
-    NSDictionary *dict = [NSDictionary dictionaryWithObject:NavigationTitleColor forKey:NSForegroundColorAttributeName];
-    self.navigationController.navigationBar.titleTextAttributes=dict;
+    [Header NavigationConifigInitialize:self];
+
     
     self.view.backgroundColor =[UIColor whiteColor];
     self.tableView.tableFooterView = [[UIView alloc] init];
@@ -101,15 +59,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 #pragma mark - Table view data source
 
@@ -193,7 +143,8 @@
 {
     NSString *FunctionName =[self.List objectAtIndex:indexPath.row];
     NSLog(FunctionName,nil);
-    int mark =[[[self.delegate.FunctionMark objectForKey:FunctionName]objectForKey:@"mark"]intValue];
+    
+    int mark = (int)[[(AppDelegate *)[[UIApplication sharedApplication]delegate]FunctionList] indexOfObject:FunctionName];
     
     UIViewController *vc = [[UIViewController alloc]init];
 

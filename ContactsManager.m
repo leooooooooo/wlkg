@@ -119,7 +119,7 @@
         PersonInfo.userID = Info.userID;
         PersonInfo.name = Info.name;
         PersonInfo.company = Info.company;
-        PersonInfo.department = (NSString)Info.department;
+        PersonInfo.department = Info.department;
         PersonInfo.duty = Info.duty;
         PersonInfo.mobilephone = Info.mobilephone;
         PersonInfo.backupmobilephone = Info.backupmobilephone;
@@ -159,8 +159,8 @@
     NSMutableArray *resultArray = [NSMutableArray array];
     
     for (Person *info in fetchedObjects) {
-        NSLog(@"userID:%@", info.userID);
-        NSLog(@"name:%@", info.name);
+        //NSLog(@"userID:%@", info.userID);
+        //NSLog(@"name:%@", info.name);
         [resultArray addObject:info];
     }
     return resultArray;

@@ -8,26 +8,144 @@
 
 #import "ContactsViewController.h"
 
-@interface ContactsViewController ()
 
+
+@interface ContactsViewController ()
+{
+    ContactsTableViewController *ContactsTableVC;
+}
 @end
 
 @implementation ContactsViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+
+    [Header NavigationConifigInitialize:self];
     
     
-    CoreDataManager = [[ContactsManager alloc]init];
     
+    [self checkUpdataList];
+    
+    self.tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0,WIDTH, HEIGHT) style:UITableViewStylePlain];
+    
+    self.tableView.dataSource = self;
+    self.tableView.delegate = self;
+    
+    ContactsTableVC = [[ContactsTableViewController alloc]init];
+    ContactsTableVC.List = self.List;
+    ContactsTableVC.PushDelegate = self;
+    UINavigationController *searchnav = [[UINavigationController alloc]initWithRootViewController:ContactsTableVC];
+    searchnav.navigationBarHidden = YES;
+    self.searchController = [[UISearchController alloc]initWithSearchResultsController:ContactsTableVC];
+    self.searchController.searchResultsUpdater = self;
+
+    [self.searchController.searchBar sizeToFit];
+    
+    self.tableView.tableHeaderView = self.searchController.searchBar;
+    [self.view addSubview:self.tableView];
+}
+
+#pragma mark - Table view data source
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.List.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    static NSString *customXibCellIdentifier = @"CustomXibCellIdentifier";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:customXibCellIdentifier];
+    if(cell == nil)
+    {
+        //使用默认的UITableViewCell,但是不使用默认的image与text，改为添加自定义的控件
+        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:customXibCellIdentifier];
+        
+        //Date
+        CGRect DateRect = CGRectMake(20,11,120,22);
+        CGPoint i = DateRect.origin;
+        //CGSize j = DateRect.size;
+        UILabel *DateLabel = [[UILabel alloc]initWithFrame:DateRect];
+        DateLabel.font = [UIFont systemFontOfSize:16];
+        DateLabel.tag = 1;
+        //nameLabel.textColor = [UIColor brownColor];
+        DateLabel.textAlignment= NSTextAlignmentLeft;
+        
+        [cell.contentView addSubview:DateLabel];
+        
+        //Fund
+        CGRect FundRect = CGRectMake(WIDTH-220, i.y, 200, 22);
+        UILabel *FundLabel = [[UILabel alloc]initWithFrame:FundRect];
+        //i = FundRect.origin;
+        //j = FundRect.size;
+        FundLabel.font = [UIFont systemFontOfSize:16];
+        FundLabel.tag = 2;
+        FundLabel.textAlignment= NSTextAlignmentRight;
+        //nameLabel.textColor = [UIColor brownColor];
+        [cell.contentView addSubview:FundLabel];
+        
+    }
+    
+    
+
+    //Date
+    ((UILabel *)[cell.contentView viewWithTag:1]).text = [(Person *)[self.List objectAtIndex:indexPath.row]name];
+    //Fund
+    ((UILabel *)[cell.contentView viewWithTag:2]).text = [(Person *)[self.List objectAtIndex:indexPath.row]department];
+    
+    
+    return cell;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    Person *info = [self.List objectAtIndex:indexPath.row];
+    
+    [self Push:info];
+}
+
+-(void)Push:(Person *)info
+{
+    //self.searchController.hidesNavigationBarDuringPresentation = NO;
+    
+    ContactDetailViewController *vc =[[ContactDetailViewController alloc]init];
+    
+    vc.Person = info;
+    vc.title = info.name;
+    
+    UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:vc];
+    [nav setModalTransitionStyle:UIModalTransitionStyleFlipHorizontal];
+    [self presentViewController:nav animated:YES completion:nil];
+}
+
+#pragma mark - UISearchResultsUpdating
+- (void)updateSearchResultsForSearchController:(UISearchController *)searchController {
+    NSString *searchString = [self.searchController.searchBar text];
+    NSLog(@"Entering:%@",searchString);
+
+    
+    NSPredicate *preicate = [NSPredicate predicateWithFormat:@"name CONTAINS[c] %@ or department CONTAINS[c] %@", searchString,searchString];
+    
+
+    ContactsTableVC.List = [NSMutableArray arrayWithArray:[self.List filteredArrayUsingPredicate:preicate]];
+    
+    //过滤数据
+    [ContactsTableVC.tableView reloadData];
+
+    
+}
+
+
+
+-(void)checkUpdataList
+{
+    self.CoreDataManager = [[ContactsManager alloc]init];
     //更新时间
+    
     NSString *updateDate = [[NSUserDefaults standardUserDefaults] objectForKey:@"updateDate"];
     
     if (!updateDate) {
         //如果无此对象，表示第一次，那么就读数据写到数据库中
         [self writeDate];
-        
+        NSLog(@"首次获取数据");
     }else{
         //有此对象说明只要从数据库中读数据
         NSTimeInterval update = updateDate.doubleValue;
@@ -35,16 +153,17 @@
         //8小时一更新
         if ((now - update)>8*60*60) {
             //如果超出八小时就把数据库清空再重新写
-            [CoreDataManager deleteData];
+            [self.CoreDataManager deleteData];
             [self writeDate];
+            NSLog(@"更新数据");
         }else{
             //没有超过8小时就从数据库中读
-            NSMutableArray *array = [CoreDataManager selectData:10 andOffset:0];
+            NSMutableArray *array = [self.CoreDataManager selectData:999 andOffset:0];
             self.List = [NSMutableArray arrayWithArray:array];
-            //[newsTableView reloadData];
+            NSLog(@"读取数据库");
         }
     }
-
+    
 }
 
 -(void)writeDate
@@ -67,7 +186,7 @@
         [self.List addObject:info];
     }
     //把数据写到数据库
-    [CoreDataManager insertCoreData:self.List];
+    [self.CoreDataManager insertCoreData:self.List];
     //[newsTableView reloadData];
 }
 
