@@ -109,8 +109,8 @@
 
 -(void)Logout
 {
-    status =[[KeychainItemWrapper alloc] initWithIdentifier:@"status"accessGroup:Bundle];
-    [status setObject:@"0" forKey:(id)kSecValueData];
+    [[NSUserDefaults standardUserDefaults]setObject:(id)NO forKey:@"AutoLogin"];
+    [[NSUserDefaults standardUserDefaults]synchronize];
     [super dismissViewControllerAnimated:YES completion:nil];
     
     

@@ -17,9 +17,7 @@
 - (void)setneedSwipeShowMenu:(BOOL)animated;
 @end
 
-@interface MainTabBarViewController : UITabBarController<LeftDelegate,UITabBarDelegate>{
-    KeychainItemWrapper *status;
-}
+@interface MainTabBarViewController : UITabBarController<LeftDelegate,UITabBarDelegate>
 @property(assign,nonatomic)id<NavigationDelegate>NavigationDelegate;
 
 

@@ -243,7 +243,6 @@
 		B36DC1101B67424400402EC5 /* ContactDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactDetailViewController.m; sourceTree = "<group>"; };
 		B36DC1121B6748D900402EC5 /* Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
 		B36DC1131B6748D900402EC5 /* Header.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Header.m; sourceTree = "<group>"; };
-		B36DC1B51B7067D700402EC5 /* wlkg copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "wlkg copy-Info.plist"; path = "/Users/Leo/Documents/wlkg/wlkg copy-Info.plist"; sourceTree = "<absolute>"; };
 		B37248751B4D0B7200A4CE6D /* NewsListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsListTableViewController.h; sourceTree = "<group>"; };
 		B37248761B4D0B7200A4CE6D /* NewsListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsListTableViewController.m; sourceTree = "<group>"; };
 		B372488C1B4D19EA00A4CE6D /* CLLRefreshCircleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLLRefreshCircleView.h; sourceTree = "<group>"; };
@@ -331,7 +330,6 @@
 				18B840C91A198822004C3FC7 /* wlkg */,
 				18B840E61A198823004C3FC7 /* wlkgTests */,
 				18B840C81A198822004C3FC7 /* Products */,
-				B36DC1B51B7067D700402EC5 /* wlkg copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
