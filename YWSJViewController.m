@@ -10,7 +10,11 @@
 #import "Header.h"
 #import "UUColor.h"
 #import "DetailTableViewController.h"
-#import "SVProgressHUD.h"
+#import <Leo/Leo.h>
+#import "AppDelegate.h"
+@import Leo.Post;
+@import Leo.Table;
+@import Leo.HUD;
 
 @interface YWSJViewController ()
 
@@ -47,6 +51,11 @@
     [backview setFrame:CGRectMake(0, 60, WIDTH, 50)];
     //
     [tableView setFrame:CGRectMake(0, 48, WIDTH, HEIGHT-48)];
+    if (self.mark == 32|self.mark==33) {
+    [tableView setFrame:CGRectMake(0, 48, WIDTH, HEIGHT-48)];
+        [self.view bringSubviewToFront:tableView];
+        [self showWithStatus];
+    }
     //tableView.sectionHeaderHeight = 44;
     //tableView.backgroundColor = UUCleanGrey;
     tableView.tableFooterView = [[UIView alloc]init];
@@ -97,7 +106,31 @@
             label1 = [NSString stringWithFormat:@"贸别：%@\n船名：%@\n航次：%@",[[self.List objectAtIndex:indexPath.row]objectAtIndex:1],[[self.List objectAtIndex:indexPath.row]objectAtIndex:2],[[self.List objectAtIndex:indexPath.row]objectAtIndex:3]];
             label2 = [NSString stringWithFormat:@"提单号：%@\n客户名称：%@",[[self.List objectAtIndex:indexPath.row]objectAtIndex:4],[[self.List objectAtIndex:indexPath.row]objectAtIndex:5]];
             break;
-            
+        case 32:
+            label1 = [NSString stringWithFormat:@"委托号：%@\n船名：%@\n航次：%@",[[self.List objectAtIndex:indexPath.row]objectAtIndex:0],[[self.List objectAtIndex:indexPath.row]objectAtIndex:1],[[self.List objectAtIndex:indexPath.row]objectAtIndex:2]];
+            //label2 = [NSString stringWithFormat:@"提单号：%@\n客户名称：%@",[[self.List objectAtIndex:indexPath.row]objectAtIndex:4],[[self.List objectAtIndex:indexPath.row]objectAtIndex:5]];
+            break;
+        case 33:
+            label1 = [NSString stringWithFormat:@"船名航次：%@\n应付金额：%@\n应收金额：%@",[[self.List objectAtIndex:indexPath.row]objectAtIndex:0],[[self.List objectAtIndex:indexPath.row]objectAtIndex:1],[[self.List objectAtIndex:indexPath.row]objectAtIndex:2]];
+            //label2 = [NSString stringWithFormat:@"提单号：%@\n客户名称：%@",[[self.List objectAtIndex:indexPath.row]objectAtIndex:4],[[self.List objectAtIndex:indexPath.row]objectAtIndex:5]];
+            break;
+        case 34:
+            label1 = [NSString stringWithFormat:@"保税部：%@\n船名：%@\n货物名称：%@",[[self.List objectAtIndex:indexPath.row]objectAtIndex:1],[[self.List objectAtIndex:indexPath.row]objectAtIndex:2],[[self.List objectAtIndex:indexPath.row]objectAtIndex:3]];
+            label2 = [NSString stringWithFormat:@"货主名称：%@\n提单数：%@\n箱：%@",[[self.List objectAtIndex:indexPath.row]objectAtIndex:4],[[self.List objectAtIndex:indexPath.row]objectAtIndex:5],[[self.List objectAtIndex:indexPath.row]objectAtIndex:6]];
+            break;
+        case 35:
+            label1 = [NSString stringWithFormat:@"货代：%@\n货物：%@\n包装：%@",[[self.List objectAtIndex:indexPath.row]objectAtIndex:1],[[self.List objectAtIndex:indexPath.row]objectAtIndex:2],[[self.List objectAtIndex:indexPath.row]objectAtIndex:3]];
+            label2 = [NSString stringWithFormat:@"件重：%@\n航次：%@\n提单：%@",[[self.List objectAtIndex:indexPath.row]objectAtIndex:4],[[self.List objectAtIndex:indexPath.row]objectAtIndex:5],[[self.List objectAtIndex:indexPath.row]objectAtIndex:6]];
+            break;
+        case 36:
+            label1 = [NSString stringWithFormat:@"保税部：%@\n船名：%@\n货物名称：%@",[[self.List objectAtIndex:indexPath.row]objectAtIndex:1],[[self.List objectAtIndex:indexPath.row]objectAtIndex:2],[[self.List objectAtIndex:indexPath.row]objectAtIndex:3]];
+            label2 = [NSString stringWithFormat:@"货主名称：%@\n提单数：%@\n箱：%@",[[self.List objectAtIndex:indexPath.row]objectAtIndex:4],[[self.List objectAtIndex:indexPath.row]objectAtIndex:5],[[self.List objectAtIndex:indexPath.row]objectAtIndex:6]];
+            break;
+        case 37:
+            label1 = [NSString stringWithFormat:@"货代：%@\n货名：%@",[[self.List objectAtIndex:indexPath.row]objectAtIndex:0],[[self.List objectAtIndex:indexPath.row]objectAtIndex:1]];
+            label2 = [NSString stringWithFormat:@"日期：%@\n实收金额：%@",[[self.List objectAtIndex:indexPath.row]objectAtIndex:2],[[self.List objectAtIndex:indexPath.row]objectAtIndex:3]];
+                      
+            break;
         default:
             break;
     }
@@ -122,102 +155,6 @@
     cell.accessoryType = YES;
     return cell;
 }
-/*
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    
-    
-        static NSString *customXibCellIdentifier = @"CustomXibCellIdentifier";
-
-        //使用默认的UITableViewCell,但是不使用默认的image与text，改为添加自定义的控件
-        UITableViewCell *cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:customXibCellIdentifier];
-        
-        //Date
-        CGRect DateRect = CGRectMake(0,11,150,22);
-        CGPoint i = DateRect.origin;
-        CGSize j = DateRect.size;
-        UILabel *DateLabel = [[UILabel alloc]initWithFrame:DateRect];
-        DateLabel.font = [UIFont systemFontOfSize:16];
-        DateLabel.tag = 1;
-        //nameLabel.textColor = [UIColor brownColor];
-        DateLabel.textAlignment= NSTextAlignmentCenter;
-        
-        [cell.contentView addSubview:DateLabel];
-        
-        //Fund
-        CGRect FundRect = CGRectMake(WIDTH/3, i.y, 150, 22);
-        UILabel *FundLabel = [[UILabel alloc]initWithFrame:FundRect];
-        i = FundRect.origin;
-        j = FundRect.size;
-        FundLabel.font = [UIFont systemFontOfSize:16];
-        FundLabel.tag = 2;
-        FundLabel.textAlignment= NSTextAlignmentCenter;
-        FundLabel.textColor = UUGreen;
-        [cell.contentView addSubview:FundLabel];
-        
-        //DOD
-        CGRect DODRect = CGRectMake(WIDTH*2/3, i.y, 150, 22);
-        UILabel *DODLabel = [[UILabel alloc]initWithFrame:DODRect];
-        DODLabel.font = [UIFont systemFontOfSize:16];
-        DODLabel.tag = 3;
-        DODLabel.textAlignment= NSTextAlignmentCenter;
-        DODLabel.textColor = UURed;
-        //为图片添加边框
-        CALayer *layer = [DODLabel layer];
-        layer.cornerRadius = 4;
-        layer.borderColor = [[UIColor whiteColor]CGColor];
-        layer.borderWidth = 0;
-        layer.masksToBounds = YES;
-        [cell.contentView addSubview:DODLabel];
-    
-    
-    NSArray *array = [self.List objectAtIndex:indexPath.row];
-    
-    //Month
-    ((UILabel *)[cell.contentView viewWithTag:1]).text = [NSString stringWithFormat:@"%@/%@",[array objectAtIndex:2],[array objectAtIndex:3]];
-    //Income
-    ((UILabel *)[cell.contentView viewWithTag:2]).text = [array objectAtIndex:4];
-    //Cost
-    ((UILabel *)[cell.contentView viewWithTag:3]).text = [array objectAtIndex:5];
-
-    return cell;
-    
-}
-*/
-//头部
-/*
-- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
-{
-    UIView* myView = [[UIView alloc] init];
-    myView.backgroundColor = [UIColor colorWithRed:0.10 green:0.68 blue:0.94 alpha:0.95];
-    //Date
-    UILabel *Date = [[UILabel alloc] initWithFrame:CGRectMake(0, 15, 150, 20)];
-    CGPoint i = Date.frame.origin;
-    CGSize  j = Date.frame.size;
-    Date.textColor=[UIColor whiteColor];
-    Date.backgroundColor = [UIColor clearColor];
-    Date.text=@"船名/航次";
-    Date.textAlignment= NSTextAlignmentCenter;
-    [myView addSubview:Date];
-    //Fund
-    UILabel *Fund = [[UILabel alloc]initWithFrame:CGRectMake(WIDTH/3, i.y, 150, 20)];
-    i = Fund.frame.origin;
-    j = Fund.frame.size;
-    Fund.textColor=[UIColor whiteColor];
-    Fund.backgroundColor = [UIColor clearColor];
-    Fund.text=@"提单号";
-    Fund.textAlignment= NSTextAlignmentCenter;
-    [myView addSubview:Fund];
-    //DOD
-    UILabel *DOD = [[UILabel alloc]initWithFrame:CGRectMake(WIDTH*2/3, i.y, 150, 20)];
-    DOD.textColor=[UIColor whiteColor];
-    DOD.backgroundColor = [UIColor clearColor];
-    DOD.text=@"客户名称";
-    DOD.textAlignment= NSTextAlignmentCenter;
-    [myView addSubview:DOD];
-    
-    return myView;
-}
-*/
 
 -(NSMutableArray *)getArray
 {
@@ -235,6 +172,24 @@
             break;
         case 23://船务财务
             URL = [NSString stringWithFormat:@"http://218.92.115.55/wlkg/Service/Supervise/Finance/GetShippingFinance.aspx?startTime=%@&endTime=%@",beginDateLabel.text,endDateLabel.text];
+            break;
+        case 32://船务财务
+            URL = [NSString stringWithFormat:@"http://218.92.115.55/wlkg/Service/Supervise/Business/getDIstributionBuiness.aspx"];
+            break;
+        case 33://船务财务
+            URL = [NSString stringWithFormat:@"http://218.92.115.55/wlkg/Service/Supervise/finance/getDistributionFinance.aspx"];
+            break;
+        case 34://货运业务
+            URL = [NSString stringWithFormat:@"http://218.92.115.55/wlkg/Service/Supervise/Business/GetBS_BusinessManagementCenter.aspx?CodeUser=%@&startTime=%@&endTime=%@",[(AppDelegate *)[[UIApplication sharedApplication]delegate]Code_User],beginDateLabel.text,endDateLabel.text];
+            break;
+        case 35://货运业务
+            URL = [NSString stringWithFormat:@"http://218.92.115.55/wlkg/Service/Supervise/Finance/GetBS_FinanceManagementCenter.aspx?CodeUser=%@&startTime=%@&endTime=%@",[(AppDelegate *)[[UIApplication sharedApplication]delegate]Code_User],beginDateLabel.text,endDateLabel.text];
+            break;
+        case 36://货运业务
+            URL = [NSString stringWithFormat:@"http://218.92.115.55/wlkg/Service/Supervise/Business/GetCC_BusinessManagementCenter.aspx?CodeUser=%@&startTime=%@&endTime=%@",[(AppDelegate *)[[UIApplication sharedApplication]delegate]Code_User],beginDateLabel.text,endDateLabel.text];
+            break;
+        case 37://货运业务
+            URL = [NSString stringWithFormat:@"http://218.92.115.55/wlkg/Service/Supervise/Finance/GetCC_FinanceManagementCenter.aspx?CodeUser=%@&startTime=%@&endTime=%@",[(AppDelegate *)[[UIApplication sharedApplication]delegate]Code_User],beginDateLabel.text,endDateLabel.text];
             break;
         default:
             break;
@@ -257,6 +212,18 @@
             break;
         case 23:return [Json objectForKey:@"ShippingFinance"];
             break;
+        case 32:return [Json objectForKey:@"DistributionBuiness"];
+            break;
+        case 33:return [Json objectForKey:@"DistributionFinance"];
+            break;
+        case 34:return [Json objectForKey:@"BusinessManagementCenter"];
+            break;
+        case 35:return [Json objectForKey:@"BusinessManagementCenter"];
+            break;
+        case 36:return [Json objectForKey:@"BusinessManagementCenter"];
+            break;
+        case 37:return [Json objectForKey:@"FinanceManagementCenter"];
+            break;
         default:return [Json objectForKey:@""];
             break;
     }
@@ -269,13 +236,76 @@
     NSArray *info = [self.List objectAtIndex:indexPath.row];
     
     NSString *ojbID =[info objectAtIndex:0];
+        
     
-    DetailTableViewController *vc =[[DetailTableViewController alloc]init];
-    vc.beginDate = beginDateLabel.text;
-    vc.endDate =endDateLabel.text;
-    vc.objID =ojbID;
-    vc.mark = self.mark;
+    NSString *urlString = @"";
+    switch (self.mark) {
+        case 20:
+            urlString = @"http://218.92.115.55/wlkg/Service/Supervise/Business/GetFreightBuinessDetail.aspx";
+            break;
+        case 21:
+            urlString = @"http://218.92.115.55/wlkg/Service/Supervise/Business/GetShippingBuinessDeatil.aspx";
+            break;
+        case 22:
+            urlString = @"http://218.92.115.55/wlkg/Service/Supervise/Finance/GetFeightFinanceDetail.aspx";
+            break;
+        case 23:
+            urlString = @"http://218.92.115.55/wlkg/Service/Supervise/Finance/GetShippingFinanceDetail.aspx";
+            break;
+        case 24:
+            urlString = @"http://218.92.115.55/wlkg/Service/Equipment/GetEquipmentRunningDetail.aspx";
+            break;
+        case 25:
+            urlString = @"http://218.92.115.55/wlkg/Service/Equipment/GetEquipmentRecordDetail.aspx";
+            break;
+        case 34:
+            urlString = @"http://218.92.115.55/wlkg/Service/Supervise/Business/GetBS_BusinessManagementCenterDetail.aspx";
+            break;
+        case 35:
+            urlString = @"http://218.92.115.55/wlkg/Service/Supervise/Finance/GetBS_FinanceManagementCenterDetail.aspx";
+            break;
+        case 36:
+            urlString = @"http://218.92.115.55/wlkg/Service/Supervise/Business/GetCC_BusinessManagementCenterDetail.aspx";
+            break;
+        case 37:
+            urlString = @"http://218.92.115.55/wlkg/Service/Supervise/Finance/GetCC_FinanceManagementCenterDetail.aspx";
+            break;
+        default:
+            break;
+    }
+    //1确定地址NSURL
+    NSString *bodyStr = [NSString stringWithFormat:@"startTime=%@&endTime=%@&ID=%@&CodeUser=%@",beginDateLabel.text,endDateLabel.text,ojbID,[(AppDelegate *)[[UIApplication sharedApplication]delegate]Code_User]];
+
+    NSDictionary *data = [[NSDictionary alloc]init];
+    if (self.mark ==32) {
+        
+        NSString *key = @"委托号+船名+航次+配车计划+运输中+制单+结算+委托结束";
+        NSArray *keys = [key componentsSeparatedByString:@"+"];
+        NSMutableDictionary *dd = [[NSMutableDictionary alloc]initWithObjects:info forKeys:keys];
+        [dd setObject:key forKey:@"Order"];
+        data = dd;
+    }
+    else if (self.mark ==33)
+    {
+        
+        NSString *key = @"船名航次+应付金额+应收金额";
+        NSArray *keys = [key componentsSeparatedByString:@"+"];
+        NSMutableDictionary *dd = [[NSMutableDictionary alloc]initWithObjects:info forKeys:keys];
+        [dd setObject:key forKey:@"Order"];
+        data = dd;
+    }
+    else
+    {
+        data = [Post getSynchronousRequestDataJSONSerializationWithURL:urlString withHTTPBody:bodyStr];
+
+    }
+    if (self.mark == 37) {
+        return;
+    }
+    
+    UIViewController *vc = [Table DetailTable:data];
     vc.title = self.title;
+    
     [self.navigationController pushViewController:vc animated:YES];
 }
 
@@ -329,7 +359,7 @@
 
 -(void)showWithStatus
 {
-    [SVProgressHUD showWithStatus:@"加载中..." maskType:SVProgressHUDMaskTypeGradient];
+    [HUD showWithStatus:@"加载中..." maskType:SVProgressHUDMaskTypeGradient];
     [self performSelector:@selector(select) withObject:nil afterDelay:0.1f];
 }
 
@@ -343,7 +373,7 @@
     if ([earlyDate isEqualToDate:endDate] && ![earlyDate isEqualToDate:beginDate]) {
         
         [self alterMessage:@"开始时间不得晚于结束时间"];
-        [SVProgressHUD dismiss];
+        [HUD dismiss];
 
         return;
         
@@ -351,7 +381,7 @@
     
     self.List = [self getArray];
     [tableView reloadData];
-    [SVProgressHUD dismiss];
+    [HUD dismiss];
 
 }
 

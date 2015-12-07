@@ -8,6 +8,7 @@
 
 #import "DetailTableViewController.h"
 #import "Header.h"
+#import <Leo/Leo.h>
 
 @interface DetailTableViewController ()
 @property (nonatomic,retain) NSDictionary *ChartDate;
@@ -23,6 +24,9 @@
     self.tableView.tableFooterView = [[UIView alloc]init];
     
     [self loadChartAndTabel];
+    
+    UIViewController *t = [Table DetailTable:self.ChartDate];
+    self.view = t.view;
 }
 
 -(void)loadChartAndTabel
@@ -150,6 +154,12 @@
     [str addAttribute:NSForegroundColorAttributeName value:[UIColor redColor] range:NSMakeRange(0,str.length)];
     ((UILabel *)[cell.contentView viewWithTag:2]).attributedText = str;
     
+    if ([str.string isEqualToString:@"已完成"]) {
+        cell.backgroundColor = UUGreen;
+    }
+    if ([str.string isEqualToString:@"待办"]) {
+        cell.backgroundColor = UUYellow;
+    }
     
     cell.userInteractionEnabled = NO;
     return cell;

@@ -30,7 +30,10 @@
 #import "ExcelListTableViewController.h"
 #import "KPSPTableViewController.h"
 #import "AppDelegate.h"
-#import "ContactsViewController.m"
+//#import "ContactsViewController.m"
+#import "ExcelViewController.h"
+#import <Leo/Leo.h>
+
 
 @interface FunctionListTableViewController ()
 @end
@@ -134,7 +137,7 @@
     ((UILabel *)[cell.contentView viewWithTag:1]).text = [self.List objectAtIndex:indexPath.row];
     
     //图标
-    ((UIImageView *)[cell.contentView viewWithTag:2]).image = [UIImage imageNamed:self.title];
+    ((UIImageView *)[cell.contentView viewWithTag:2]).image = [UIImage imageNamed:[NSString stringWithFormat:@"%@1",self.title]];
     
     return cell;
 }
@@ -276,9 +279,71 @@
         };
             break;
         case 28:{
-            vc = [[ContactsViewController alloc]init];
+            ContactsViewController *cc = [[ContactsViewController alloc]init];
+            cc.appName = AppName;
+            cc.navigationTitleColor =NavigationTitleColor;
+            cc.navigationBackArrowColor =NavigationBackArrowColor;
+            cc.navigationBarColor = NavigationBarColor;
+            vc = cc;
+
         };
             break;
+        case 29:{
+            ContactsViewController *cc = [[ContactsViewController alloc]init];
+            cc.appName = AppName;
+            cc.navigationTitleColor =NavigationTitleColor;
+            cc.navigationBackArrowColor =NavigationBackArrowColor;
+            cc.navigationBarColor = NavigationBarColor;
+            vc = cc;
+
+        };
+            break;
+        case 30:{
+            ExcelViewController *excel = [[ExcelViewController alloc]init];
+            excel.mark = mark;
+            vc=excel;
+        };
+            break;
+        case 31:{
+            ExcelViewController *excel = [[ExcelViewController alloc]init];
+            excel.mark = mark;
+            vc=excel;
+        };
+            break;
+        case 32:{
+            YWSJViewController *ywsj = [[YWSJViewController alloc]init];
+            ywsj.mark = mark;
+            vc=ywsj;
+        };
+        case 33:{
+            YWSJViewController *ywsj = [[YWSJViewController alloc]init];
+            ywsj.mark = mark;
+            vc=ywsj;
+        };
+            break;
+        case 34:{
+            YWSJViewController *ywsj = [[YWSJViewController alloc]init];
+            ywsj.mark = mark;
+            vc=ywsj;
+        };
+        case 35:{
+            YWSJViewController *ywsj = [[YWSJViewController alloc]init];
+            ywsj.mark = mark;
+            vc=ywsj;
+        };
+            break;
+        case 36:{
+            YWSJViewController *ywsj = [[YWSJViewController alloc]init];
+            ywsj.mark = mark;
+            vc=ywsj;
+        };
+        case 37:{
+            YWSJViewController *ywsj = [[YWSJViewController alloc]init];
+            ywsj.mark = mark;
+            vc=ywsj;
+        };
+            break;
+
         default:
             break;
             

@@ -69,13 +69,12 @@
     
     
     //1确定地址NSURL
-    NSString *urlString = [NSString stringWithFormat:@"http://218.92.115.55/MobilePlatform/Login.aspx"];
+    NSString *urlString = [NSString stringWithFormat:@"HTTP://boea.cn/MobilePlatform/Login.aspx"];
     NSURL *url = [NSURL URLWithString:urlString];
     
     //2建立请求NSMutableURLRequest（post需要用这个）
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
-    //网络访问超时时间
-    [request setTimeoutInterval:20.0f];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url cachePolicy:1 timeoutInterval:15];
+
     //1)post请求方式,网络请求默认是get方法，所以如果我们用post请求，必须声明请求方式。
     [request setHTTPMethod:@"POST"];
     //2)post请求的数据体,post请求中数据体时，如果有中文，不需要转换。因为ataUsingEncoding方法已经实现了转码。

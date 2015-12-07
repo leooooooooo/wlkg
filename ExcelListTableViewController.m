@@ -117,7 +117,7 @@
 {
     NSString *URL = [[NSString alloc]init];
     switch (self.mark) {
-        case 26://要闻咨询
+        case 26://要闻资讯
             URL = [NSString stringWithFormat:@"http://218.92.115.55/wlkg/Service/ReportFile/GetBusinessConditionReportList.aspx?Pages=%d",loadCount];
             break;
         default:
@@ -145,7 +145,7 @@
     NSString *name =[info objectAtIndex:1];
     NSURL *URL = [[NSURL alloc]initWithString:[urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
     
-    URL = [self downloadFile:[info objectAtIndex:2] withURL:URL];
+    URL = [self downloadFile:name withURL:URL];
     self.FileURL = URL;
     //网页打开
     UIViewController *vc = [[UIViewController alloc]init];

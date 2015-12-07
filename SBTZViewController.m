@@ -10,9 +10,10 @@
 #import "Header.h"
 #import "UUColor.h"
 #import "DetailTableViewController.h"
-#import "SVProgressHUD.h"
 #import "DropDownListView.h"
 #import "AppDelegate.h"
+#import <Leo/Leo.h>
+@import Leo.HUD;
 
 
 @interface SBTZViewController (){
@@ -234,7 +235,7 @@
 
 -(void)showWithStatus
 {
-    [SVProgressHUD showWithStatus:@"加载中..." maskType:SVProgressHUDMaskTypeGradient];
+    [HUD showWithStatus:@"加载中..." maskType:SVProgressHUDMaskTypeGradient];
     [self performSelector:@selector(select) withObject:nil afterDelay:0.1f];
 }
 
@@ -244,7 +245,7 @@
     [self.refreshControll startPullDownRefreshing];
 
     //[self.tableView reloadData];
-    [SVProgressHUD dismiss];
+    [HUD dismiss];
     
 }
 

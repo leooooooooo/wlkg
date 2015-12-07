@@ -11,7 +11,7 @@
 #import "YRSideViewController.h"
 #import "Update.h"
 
-@interface LoginViewController : UIViewController<UITextFieldDelegate>{
+@interface LoginViewController : UIViewController<UITextFieldDelegate,NSURLConnectionDelegate>{
     NSUserDefaults *KeyChain;
 }
 

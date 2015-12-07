@@ -58,7 +58,7 @@
      [self.navigationItem setRightBarButtonItem:logoutButton];
      */
     //菜单BUTTON
-    UIBarButtonItem *Menu = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"the_arrow.png"] style:UIBarButtonItemStylePlain target:self action:@selector(showMenu)];
+    UIBarButtonItem *Menu = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"the_arrow"] style:UIBarButtonItemStylePlain target:self action:@selector(showMenu)];
     [self.navigationItem setLeftBarButtonItem:Menu];
 
     
@@ -83,18 +83,23 @@
     tabBarItem4.title = PAGE4;
     
     tabBarItem1.image = [UIImage imageNamed:@"icon1_18"];
-    tabBarItem2.image = [UIImage imageNamed:@"icon1_20"];
+    tabBarItem2.image = [UIImage imageNamed:@"icon2_20"];
     tabBarItem3.image = [UIImage imageNamed:@"icon2_22"];
     tabBarItem4.image = [UIImage imageNamed:@"icon2_24"];
-    
-    [self.tabBar setBarTintColor:[UIColor colorWithRed:224.0/255.0 green:101.0/255.0 blue:69.0/255.0 alpha:0.5]];
-    
-    self.tabBar.tintColor=[UIColor whiteColor];
+    /*
+    tabBarItem1.selectedImage = [UIImage imageNamed:@"icon1_18"];
+    tabBarItem2.selectedImage = [UIImage imageNamed:@"icon1_20"];
+    tabBarItem3.selectedImage = [UIImage imageNamed:@"icon1_22"];
+    tabBarItem4.selectedImage = [UIImage imageNamed:@"icon1_24"];
+    */
+    self.tabBar.tintColor = [UIColor orangeColor];
+    [self.tabBar setBackgroundColor:[UIColor whiteColor]];
+    [self.tabBar setBarTintColor:TabBarColor];
     
     [[UITabBarItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
-                                                       [UIColor whiteColor], NSForegroundColorAttributeName,
+                                                       [UIColor whiteColor
+                                                        ], NSForegroundColorAttributeName,
                                                        nil] forState:UIControlStateNormal];
-    
 }
 
 - (void)didReceiveMemoryWarning {

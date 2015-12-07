@@ -10,7 +10,9 @@
 #import "Header.h"
 #import "AppDelegate.h"
 #import "FunctionListTableViewController.h"
-#import "SVProgressHUD.h"
+#import <Leo/Leo.h>
+#import <Leo/HUD.h>
+//@import Leo.HUD;
 
 
 
@@ -35,7 +37,7 @@ static NSString *kcellIdentifier = @"collectionCellID";
     self.functionMarkCount = 0 ;
     
     //背景+标题
-    self.view.backgroundColor  = NavigationBackArrowColor;
+    //self.view.backgroundColor  =
 
     //九宫格
     UICollectionViewFlowLayout *layout= [[UICollectionViewFlowLayout alloc]init];
@@ -43,11 +45,11 @@ static NSString *kcellIdentifier = @"collectionCellID";
     self.collectionView.delegate=self;
     self.collectionView.dataSource=self;
     [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:kcellIdentifier];
-    self.collectionView.backgroundColor = [UIColor grayColor];
-    self.collectionView.backgroundView =[[UIImageView alloc]initWithImage:[UIImage imageNamed:@"l_n_bg.png"]];
+    self.collectionView.backgroundColor = [UIColor whiteColor];
+    //self.collectionView.backgroundView =[[UIImageView alloc]initWithImage:[UIImage imageNamed:@"bg"]];
     [self.view addSubview:self.collectionView];
     
-    [SVProgressHUD showWithStatus:@"加载中..." maskType:SVProgressHUDMaskTypeGradient];
+    [HUD showWithStatus:@"加载中..." maskType:SVProgressHUDMaskTypeClear];
     [self performSelector:@selector(select) withObject:nil afterDelay:0.1f];
     
 
@@ -64,7 +66,7 @@ static NSString *kcellIdentifier = @"collectionCellID";
         self.List = [[NSMutableArray alloc]initWithArray:[self.delegate.Authority objectForKey:@"Order"]];
         [self.collectionView reloadData];
     }
-    [SVProgressHUD dismiss];
+    [HUD dismiss];
 }
 
 -(NSDictionary *)getAuthority
@@ -118,7 +120,7 @@ static NSString *kcellIdentifier = @"collectionCellID";
     
     //赋值
     
-    NSString *imageName = [NSString stringWithFormat:@"%@",[self.List objectAtIndex:indexPath.row]];
+    NSString *imageName = [NSString stringWithFormat:@"%@1",[self.List objectAtIndex:indexPath.row]];
     
     [bt setImage:[UIImage imageNamed:imageName] forState:UIControlStateNormal];
     tt.text =imageName;
@@ -164,7 +166,7 @@ static NSString *kcellIdentifier = @"collectionCellID";
 //定义每个Section 的 margin
 -(UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
 {
-    return UIEdgeInsetsMake(HEIGHT/30, 35, HEIGHT/30, 35);//分别为上、左、下、右
+    return UIEdgeInsetsMake((HEIGHT-(WIDTH/375*320+HEIGHT/10+122))*2/5, 35, HEIGHT/30, 35);//分别为上、左、下、右
 }
 
 //每个section中不同的行之间的行间距

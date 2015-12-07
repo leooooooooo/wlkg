@@ -10,10 +10,10 @@
 #import "Header.h"
 #import "UUColor.h"
 #import "DetailTableViewController.h"
-#import "SVProgressHUD.h"
+#import <Leo/Leo.h>
 #import "DropDownListView.h"
 #import "AppDelegate.h"
-
+@import Leo.HUD;
 
 @interface SBYXViewController (){
     NSMutableArray *chooseArray ;
@@ -277,7 +277,7 @@
 
 -(void)showWithStatus
 {
-    [SVProgressHUD showWithStatus:@"加载中..." maskType:SVProgressHUDMaskTypeGradient];
+    [HUD showWithStatus:@"加载中..." maskType:SVProgressHUDMaskTypeGradient];
     [self performSelector:@selector(select) withObject:nil afterDelay:0.1f];
 }
 
@@ -291,14 +291,14 @@
     if ([earlyDate isEqualToDate:endDate] && ![earlyDate isEqualToDate:beginDate]) {
         
         [self alterMessage:@"开始时间不得晚于结束时间"];
-                [SVProgressHUD dismiss];
+                [HUD dismiss];
         return;
         
     }
     
     self.List = [self getArray];
     [tableView reloadData];
-    [SVProgressHUD dismiss];
+    [HUD dismiss];
     
 }
 

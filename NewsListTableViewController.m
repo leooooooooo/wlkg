@@ -113,7 +113,7 @@
 {
     NSString *URL = [[NSString alloc]init];
     switch (self.mark) {
-        case 16://要闻咨询
+        case 16://要闻资讯
             URL = [NSString stringWithFormat:@"http://218.92.115.55/wlkg/Service/News/CompanyNews/GetCompanyNewsList.aspx?UserId=&Pages=%d&Filter=",loadCount];
             break;
         case 17://领导讲话

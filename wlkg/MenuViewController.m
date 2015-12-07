@@ -24,7 +24,7 @@
     [super viewDidLoad];
     CGRect head = CGRectMake(0, 0, WIDTH, HEIGHT/4);
     UIImageView *img = [[UIImageView alloc]initWithFrame:head];
-    img.image = [UIImage imageNamed:@"22_02"];
+    img.image = [UIImage imageNamed:@"header"];
     [self.view addSubview:img];
     UIImageView *h = [[UIImageView alloc]initWithFrame:CGRectMake(20, 20, HEIGHT/8, HEIGHT/8)];
     h.image = [UIImage imageNamed:@"head_icon.png"];
@@ -39,10 +39,10 @@
 
     UITableView *tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, HEIGHT/4, WIDTH, HEIGHT*3/4)];
     //NSDictionary *dic1 = [[NSDictionary alloc]initWithObjectsAndKeys:@"个人信息",@"name",@"22_05",@"image",@"1",@"mark",nil];
-    NSDictionary *dic2 = [[NSDictionary alloc]initWithObjectsAndKeys:@"修改密码",@"name",@"22_08",@"image",@"2",@"mark",nil];
+    NSDictionary *dic2 = [[NSDictionary alloc]initWithObjectsAndKeys:@"修改密码",@"name",@"fc_1",@"image",@"2",@"mark",nil];
     //NSDictionary *dic3 = [[NSDictionary alloc]initWithObjectsAndKeys:@"设备绑定",@"name",@"22_10",@"image",@"3",@"mark",nil];
-    NSDictionary *dic4 = [[NSDictionary alloc]initWithObjectsAndKeys:@"检查更新",@"name",@"22_12",@"image",@"4",@"mark",nil];
-    NSDictionary *dic5 = [[NSDictionary alloc]initWithObjectsAndKeys:@"登出",@"name",@"22_14",@"image",@"5",@"mark",nil];
+    NSDictionary *dic4 = [[NSDictionary alloc]initWithObjectsAndKeys:@"检查更新",@"name",@"fc_3",@"image",@"4",@"mark",nil];
+    NSDictionary *dic5 = [[NSDictionary alloc]initWithObjectsAndKeys:@"登出",@"name",@"fc_4",@"image",@"5",@"mark",nil];
 
     List = [[NSArray alloc]initWithObjects:dic2,dic4,dic5, nil];
     tableView.tableFooterView = [[UIView alloc]init];
